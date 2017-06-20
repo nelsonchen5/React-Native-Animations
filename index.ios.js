@@ -1,23 +1,26 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Animated, TouchableWithoutFeedback } from "react-native";
+import { AppRegistry, StyleSheet, Text, View, Animated, TouchableWithoutFeedback, Easing } from "react-native";
 
 export default class animations extends Component {
   state = {
     animation: new Animated.Value(0),
   };
+  
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: 300,
-      duration: 1500
-    }).start(() => {
-      this.state.animation.setValue(0);
-    });
+      toValue: 500,
+      duration: 500,
+      // easing: Easing.back(5),
+      // easing: Easing.bounce
+      // easing: Easing.elastic(3)
+      // easing: Easing.bezier(.06,1,.86,.23)
+    }).start();
   }
   
   render() {
     const animatedStyles = {
       transform: [
-        { translateY: this.state.animation }
+        { translateY: this.state.animation },
       ]
     }
     return (
@@ -34,7 +37,6 @@ export default class animations extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
     justifyContent: "center",
   },
   box: {
