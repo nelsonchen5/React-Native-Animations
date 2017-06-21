@@ -7,7 +7,7 @@ export default class animations extends Component {
   };
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: 300,
+      toValue: 360,
       duration: 1500
     }).start(() => {
       this.state.animation.setValue(0);
@@ -15,15 +15,28 @@ export default class animations extends Component {
   }
   
   render() {
+
+    const rotateInterpolate = this.state.animation.interpolate({
+      inputRange: [0, 360],
+      outputRange: ["0deg", "360deg"],
+      //outputRange: ["0deg", "180deg"],
+      // outputRange: ["0deg", "-360deg"],
+      // outputRange: ["0deg", "1080deg"],
+    });
+
     const animatedStyles = {
       transform: [
-        { translateY: this.state.animation }
+        { rotate: rotateInterpolate },
+        // { rotateX: rotateInterpolate },
+        // { rotateY: rotateInterpolate },
       ]
     }
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.startAnimation}>
-          <Animated.View style={[styles.box, animatedStyles]} />
+          <Animated.View style={[styles.box, animatedStyles]}>
+            <Text>Hello Rotate!</Text>
+          </Animated.View>
         </TouchableWithoutFeedback>
       </View>
     );
@@ -41,6 +54,8 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     backgroundColor: "tomato",
+    alignItems: "center",
+    justifyContent: "center",
   }
 });
 
