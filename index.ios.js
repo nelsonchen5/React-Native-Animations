@@ -7,7 +7,7 @@ export default class animations extends Component {
   };
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: 300,
+      toValue: 1,
       duration: 1500
     }).start(() => {
       this.state.animation.setValue(0);
@@ -15,11 +15,22 @@ export default class animations extends Component {
   }
   
   render() {
+
+    const widthInterpolate = this.state.animation.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["20%", "50%"],
+    });
+
+    const heightInterpolate = this.state.animation.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["20%", "30%"],
+    });
+
     const animatedStyles = {
-      transform: [
-        { translateY: this.state.animation }
-      ]
+      width: widthInterpolate,
+      height: heightInterpolate,
     }
+
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.startAnimation}>
@@ -38,8 +49,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   box: {
-    width: 150,
-    height: 150,
     backgroundColor: "tomato",
   }
 });
