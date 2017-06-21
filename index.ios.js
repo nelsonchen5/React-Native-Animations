@@ -7,15 +7,20 @@ export default class animations extends Component {
   };
   startAnimation = () => {
     Animated.loop(Animated.timing(this.state.animation, {
-      toValue: 300,
+      toValue: 1,
       duration: 1500
     })).start();
   }
   
   render() {
+    const rotateInterpolate = this.state.animation.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["0deg", "360deg"]
+    });
+
     const animatedStyles = {
       transform: [
-        { translateY: this.state.animation }
+        { rotate: rotateInterpolate }
       ]
     }
     return (
