@@ -35,24 +35,23 @@ If you've made modifications and it will not let you check out another demo just
 [timing](https://gitlab.com/codedaily/reactnativeanimations/tree/timing)
 [spring](https://gitlab.com/codedaily/reactnativeanimations/tree/spring)
 [loop](https://gitlab.com/codedaily/reactnativeanimations/tree/timingLoop)
-[parallel]()
-[sequence]()
-[stagger]()
-[delay]()
-[decay]()
-[add]()
-[divide]()
-[modulo]()
-[multiply]()
-[event]()
-[diffClamp]()
-
+[parallel](https://gitlab.com/codedaily/reactnativeanimations/tree/parallel)
+[sequence](https://gitlab.com/codedaily/reactnativeanimations/tree/sequence)
+[stagger]((https://gitlab.com/codedaily/reactnativeanimations/tree/stagger)
+[delay](https://gitlab.com/codedaily/reactnativeanimations/tree/delay)
+[decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
+[add](https://gitlab.com/codedaily/reactnativeanimations/tree/add)
+[divide](https://gitlab.com/codedaily/reactnativeanimations/tree/divide)
+[modulo](https://gitlab.com/codedaily/reactnativeanimations/tree/modulo)
+[multiply](https://gitlab.com/codedaily/reactnativeanimations/tree/multiply)
+[event](https://gitlab.com/codedaily/reactnativeanimations/tree/event)
+[diffClamp](https://gitlab.com/codedaily/reactnativeanimations/tree/diffClamp)
 
 ### Combining Animations
-[delay]()
-[parallel]()
-[sequence]()
-[stagger]()
+[parallel](https://gitlab.com/codedaily/reactnativeanimations/tree/parallel)
+[sequence](https://gitlab.com/codedaily/reactnativeanimations/tree/sequence)
+[stagger](https://gitlab.com/codedaily/reactnativeanimations/tree/stagger)
+[delay](https://gitlab.com/codedaily/reactnativeanimations/tree/delay)
 
 ### Using Native Driver
 [nativeOnScroll]()
@@ -66,5 +65,6 @@ If you've made modifications and it will not let you check out another demo just
 ### Advanced Techniques
 
 ### Basic Real World
+- Stagger form fields animating opacity in
 
 ### Advanced Real World
