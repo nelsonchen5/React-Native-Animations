@@ -34,8 +34,8 @@ If you've made modifications and it will not let you check out another demo just
 ### Animated Functions
 [timing](https://gitlab.com/codedaily/reactnativeanimations/tree/timing)
 [spring](https://gitlab.com/codedaily/reactnativeanimations/tree/spring)
-[decay]()
 [loop]()
+[decay]()
 [add]()
 [divide]()
 [modulo]()
