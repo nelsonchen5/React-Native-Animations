@@ -3,22 +3,23 @@ import { AppRegistry, StyleSheet, Text, View, Animated, TouchableWithoutFeedback
 
 export default class animations extends Component {
   state = {
-    animation: new Animated.Value(0),
+    animation: new Animated.Value(1),
   };
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: 300,
-      duration: 1500
+      toValue: 0,
+      duration: 350
     }).start(() => {
-      this.state.animation.setValue(0);
+      Animated.timing(this.state.animation, {
+        toValue: 1,
+        duration: 500,
+      }).start();
     });
   }
   
   render() {
     const animatedStyles = {
-      transform: [
-        { translateY: this.state.animation }
-      ]
+      opacity: this.state.animation
     }
     return (
       <View style={styles.container}>
