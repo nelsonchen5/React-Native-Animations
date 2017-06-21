@@ -13,6 +13,9 @@ Additionally each of these is a link to the code on gitlab if you would like to 
 If you've made modifications and it will not let you check out another demo just run the command
 `git reset --hard`. This will reset everything, so be warned if you have pieces of a demo you have modified and want to keep.
 
+### Intro
+- Understanding Internals
+
 ### Animating Properties
 [timing](https://gitlab.com/codedaily/reactnativeanimations/tree/timing)
 [timingOpacity](https://gitlab.com/codedaily/reactnativeanimations/tree/timingOpacity)
@@ -23,10 +26,45 @@ If you've made modifications and it will not let you check out another demo just
 [timingRotation](https://gitlab.com/codedaily/reactnativeanimations/tree/timingRotation)
 [timingWidth](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWidth)
 
-
 ### Additional Animated Timing
 [timingWithEasing](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWithEasing)
 
+### Animated.Value/ValueXY
 
-
+### Animated Functions
+[timing](https://gitlab.com/codedaily/reactnativeanimations/tree/timing)
 [spring](https://gitlab.com/codedaily/reactnativeanimations/tree/spring)
+[decay]()
+[loop]()
+[add]()
+[divide]()
+[modulo]()
+[multiply]()
+[delay]()
+[parallel]()
+[sequence]()
+[stagger]()
+[event]()
+[diffClamp]()
+
+
+### Combining Animations
+[delay]()
+[parallel]()
+[sequence]()
+[stagger]()
+
+### Using Native Driver
+[nativeOnScroll]()
+[nativeSpring]()
+[nativeTiming]()
+
+### Gestures and Animations
+
+### Basic Techniques
+
+### Advanced Techniques
+
+### Basic Real World
+
+### Advanced Real World
