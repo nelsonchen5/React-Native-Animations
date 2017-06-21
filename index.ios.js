@@ -16,9 +16,8 @@ export default class animations extends Component {
   
   render() {
     const animatedStyles = {
-      transform: [
-        { translateY: this.state.animation }
-      ]
+      top: this.state.animation,
+      left: this.state.animation,
     }
     return (
       <View style={styles.container}>
@@ -38,6 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   box: {
+    position: "absolute",
     width: 150,
     height: 150,
     backgroundColor: "tomato",
