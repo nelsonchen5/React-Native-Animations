@@ -13,9 +13,20 @@ Additionally each of these is a link to the code on gitlab if you would like to 
 If you've made modifications and it will not let you check out another demo just run the command
 `git reset --hard`. This will reset everything, so be warned if you have pieces of a demo you have modified and want to keep.
 
+### Animating Properties
 [timing](https://gitlab.com/codedaily/reactnativeanimations/tree/timing)
-[timingScale](https://gitlab.com/codedaily/reactnativeanimations/tree/timingScale)
 [timingOpacity](https://gitlab.com/codedaily/reactnativeanimations/tree/timingOpacity)
+[timingScale](https://gitlab.com/codedaily/reactnativeanimations/tree/timingScale)
+[timingWidthHeight](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWidthHeight)
+[timingAbsolute](https://gitlab.com/codedaily/reactnativeanimations/tree/timingAbsolute)
+[timingColor](https://gitlab.com/codedaily/reactnativeanimations/tree/timingColor)
+[timingRotation](https://gitlab.com/codedaily/reactnativeanimations/tree/timingRotation)
+[timingWidth](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWidth)
+
+
+### Additional Animated Timing
 [timingWithEasing](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWithEasing)
+
+
 
 [spring](https://gitlab.com/codedaily/reactnativeanimations/tree/spring)
