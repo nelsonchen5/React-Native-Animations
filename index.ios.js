@@ -6,12 +6,10 @@ export default class animations extends Component {
     animation: new Animated.Value(0),
   };
   startAnimation = () => {
-    Animated.timing(this.state.animation, {
+    Animated.loop(Animated.timing(this.state.animation, {
       toValue: 300,
       duration: 1500
-    }).start(() => {
-      this.state.animation.setValue(0);
-    });
+    })).start();
   }
   
   render() {
