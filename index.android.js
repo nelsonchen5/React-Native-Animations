@@ -8,12 +8,17 @@ export default class animations extends Component {
   startAnimation = () => {
     Animated.timing(this.state.animation, {
       toValue: 0,
-      duration: 350
-    }).start(() => {
+      duration: 1000
+    }).start((animation) => {
+      this.setState({
+        finished: animation.finished + ""
+      });
+
       Animated.timing(this.state.animation, {
         toValue: 1,
         duration: 500,
       }).start();
+
     });
   }
   
@@ -26,6 +31,7 @@ export default class animations extends Component {
         <TouchableWithoutFeedback onPress={this.startAnimation}>
           <Animated.View style={[styles.box, animatedStyles]} />
         </TouchableWithoutFeedback>
+        <Text>{this.state.finished}</Text>
       </View>
     );
 
