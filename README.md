@@ -15,3 +15,6 @@ If you've made modifications and it will not let you check out another demo just
 
 [timing](https://gitlab.com/codedaily/reactnativeanimations/tree/timing)
 [timingWithEasing](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWithEasing)
+[timingOpacity](https://gitlab.com/codedaily/reactnativeanimations/tree/timingOpacity)
+
+[spring](https://gitlab.com/codedaily/reactnativeanimations/tree/spring)
