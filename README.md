@@ -40,6 +40,7 @@ If you've made modifications and it will not let you check out another demo just
 [stagger]((https://gitlab.com/codedaily/reactnativeanimations/tree/stagger)
 [delay](https://gitlab.com/codedaily/reactnativeanimations/tree/delay)
 [decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
+// react-native-tab-view
 [add](https://gitlab.com/codedaily/reactnativeanimations/tree/add)
 [divide](https://gitlab.com/codedaily/reactnativeanimations/tree/divide)
 [modulo](https://gitlab.com/codedaily/reactnativeanimations/tree/modulo)
