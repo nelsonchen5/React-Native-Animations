@@ -26,6 +26,7 @@ export default class animations extends Component {
   state = {
     email: new Animated.Value(0),
     password: new Animated.Value(0),
+    button: new Animated.Value(0)
   };
 
   componentDidMount() {
@@ -35,6 +36,10 @@ export default class animations extends Component {
         duration: 200
       }),
       Animated.timing(this.state.password, {
+        toValue: 1,
+        duration: 200
+      }),
+      Animated.timing(this.state.button, {
         toValue: 1,
         duration: 200
       })
@@ -47,6 +52,7 @@ export default class animations extends Component {
 
     const emailStyle = createAnimationStyle(this.state.email);
     const passwordStyle = createAnimationStyle(this.state.password);
+    const buttonStyle = createAnimationStyle(this.state.button);
 
     return (
       <View style={styles.container}>
@@ -67,9 +73,9 @@ export default class animations extends Component {
               secureTextEntry
             />
             <TouchableOpacity>
-              <View style={styles.button}>
+              <Animated.View style={[styles.button, buttonStyle]}>
                 <Text style={styles.buttonText}>Login</Text>
-              </View>
+              </Animated.View>
             </TouchableOpacity>
           </View>
         </View>
