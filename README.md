@@ -67,10 +67,14 @@ If you've made modifications and it will not let you check out another demo just
 
 ### Techniques
 - .99 cliff
+- Custom animations w/ setNativeProps
+- Using d3-interpolate
+- Animating SVG paths
 
 ### Basic Real World
 - Stagger form fields animating opacity in
 - Stagger list items animating in
+- Fade in delay, bottom piece translates down
 
 ### Advanced Real World
 - UIMovement stuff
