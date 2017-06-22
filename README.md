@@ -72,7 +72,7 @@ If you've made modifications and it will not let you check out another demo just
 - Animating SVG paths
 
 ### Basic Real World
-- Dynamic Animated Notification
+- [Dynamic Animated Notification](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedNotification)
 - Stagger form fields animating opacity in
 - Stagger list items animating in
 - Fade in delay, bottom piece translates down
