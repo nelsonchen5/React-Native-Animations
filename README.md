@@ -39,13 +39,16 @@ If you've made modifications and it will not let you check out another demo just
 [sequence](https://gitlab.com/codedaily/reactnativeanimations/tree/sequence)
 [stagger]((https://gitlab.com/codedaily/reactnativeanimations/tree/stagger)
 [delay](https://gitlab.com/codedaily/reactnativeanimations/tree/delay)
+// need swiper
 [decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
 // react-native-tab-view
 [add](https://gitlab.com/codedaily/reactnativeanimations/tree/add)
 [divide](https://gitlab.com/codedaily/reactnativeanimations/tree/divide)
 [modulo](https://gitlab.com/codedaily/reactnativeanimations/tree/modulo)
 [multiply](https://gitlab.com/codedaily/reactnativeanimations/tree/multiply)
+//
 [event](https://gitlab.com/codedaily/reactnativeanimations/tree/event)
+//header
 [diffClamp](https://gitlab.com/codedaily/reactnativeanimations/tree/diffClamp)
 
 ### Combining Animations
@@ -61,11 +64,11 @@ If you've made modifications and it will not let you check out another demo just
 
 ### Gestures and Animations
 
-### Basic Techniques
-
-### Advanced Techniques
+### Techniques
+- .99 cliff
 
 ### Basic Real World
 - Stagger form fields animating opacity in
+- Stagger list items animating in
 
 ### Advanced Real World
