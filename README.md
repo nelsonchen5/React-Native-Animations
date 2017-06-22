@@ -74,7 +74,7 @@ If you've made modifications and it will not let you check out another demo just
 ### Basic Real World
 - [Dynamic Animated Notification](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedNotification)
 - [Stagger Form Field Visibilty](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerFormFields)
-- [Fade Delay with Sliding Information](https://gitlab.com/codedaily/reactnativeanimations/tree/fadeDelayAndSlide)
+- [Fade in backdrop, expanding image with sliding information](https://gitlab.com/codedaily/reactnativeanimations/tree/fadeDelayAndSlide)
 
 ### Advanced Real World
 - UIMovement stuff
