@@ -74,7 +74,7 @@ If you've made modifications and it will not let you check out another demo just
 ### Basic Real World
 - [Dynamic Animated Notification](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedNotification)
 - [Stagger Form Field Visibilty](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerFormFields)
-- Stagger list items animating in
+- [Stagger Flat List Items](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerFlatList)
 - Fade in delay, bottom piece translates down
 
 ### Advanced Real World
