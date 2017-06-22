@@ -39,7 +39,6 @@ If you've made modifications and it will not let you check out another demo just
 [sequence](https://gitlab.com/codedaily/reactnativeanimations/tree/sequence)
 [stagger]((https://gitlab.com/codedaily/reactnativeanimations/tree/stagger)
 [delay](https://gitlab.com/codedaily/reactnativeanimations/tree/delay)
-// need swiper
 [decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
 // react-native-tab-view
 [add](https://gitlab.com/codedaily/reactnativeanimations/tree/add)
@@ -63,6 +62,8 @@ If you've made modifications and it will not let you check out another demo just
 [nativeTiming]()
 
 ### Gestures and Animations
+[decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
+
 
 ### Techniques
 - .99 cliff
@@ -72,3 +73,4 @@ If you've made modifications and it will not let you check out another demo just
 - Stagger list items animating in
 
 ### Advanced Real World
+- UIMovement stuff
