@@ -69,7 +69,7 @@ If you've made modifications and it will not let you check out another demo just
 
 - [Using d3-interpolate with Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/d3Interpolate)
 
-- [Animating SVG paths w/ d3-interpolate and Animated]()
+- [Animating SVG paths w/ d3-interpolate and Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/svgPathsAndAnimated)
 
 - .99 cliff
 
