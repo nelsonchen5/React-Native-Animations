@@ -7,18 +7,19 @@ export default class animations extends Component {
   }
   render() {
 
-    const backgroundInterpolate = this.state.animation.interpolate({
+    const opacityInterpolate = this.state.animation.interpolate({
       inputRange: [0, 3000],
-      outputRange: ["rgb(255,99,71)", "rgb(99,71,255)"]
+      outputRange: [1, 0]
     });
 
     const backgroundStyle = {
-      backgroundColor: backgroundInterpolate
+      backgroundColor: "tomato",
+      opacity: opacityInterpolate
     }
     return (
       <View style={styles.container}>
-        <ScrollView
-          scrollEventThrottle={16}
+        <Animated.ScrollView
+          scrollEventThrottle={1}
           onScroll={Animated.event([
             {
               nativeEvent: {
@@ -27,10 +28,10 @@ export default class animations extends Component {
                 },
               }
             }
-          ])}
+          ], { useNativeDriver: true })}
         >
           <Animated.View style={[styles.content, backgroundStyle]} />
-        </ScrollView>
+        </Animated.ScrollView>
       </View>
     );
 
