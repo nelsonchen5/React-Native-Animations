@@ -66,7 +66,7 @@ If you've made modifications and it will not let you check out another demo just
 
 ### Techniques
 - [How to use setNativeProps](https://gitlab.com/codedaily/reactnativeanimations/tree/setNativeProps)
-
+- [How createAnimatedComponent works](https://github.com/facebook/react-native/blob/master/Libraries/Animated/src/AnimatedImplementation.js#L1734) - no git branch here
 - Using d3-interpolate
 
 - Animating SVG paths
