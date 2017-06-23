@@ -63,13 +63,20 @@ If you've made modifications and it will not let you check out another demo just
 ### Gestures and Animations
 [decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
 
-### Techniques
-- [How to use setNativeProps](https://gitlab.com/codedaily/reactnativeanimations/tree/setNativeProps)
+### Understand and Build Custom Animations
+
 - [How createAnimatedComponent works](https://github.com/facebook/react-native/blob/master/Libraries/Animated/src/AnimatedImplementation.js#L1734) - no git branch here
+
+- [How to use setNativeProps](https://gitlab.com/codedaily/reactnativeanimations/tree/setNativeProps)
+
 
 - [Using d3-interpolate with Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/d3Interpolate)
 
 - [Animating SVG paths w/ d3-interpolate and Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/svgPathsAndAnimated)
+
+- [Animating SVG paths w/ Art and Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/svgPathsAndAnimated)
+
+### Techniques
 
 - .99 cliff
 
