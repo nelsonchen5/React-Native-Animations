@@ -64,17 +64,20 @@ If you've made modifications and it will not let you check out another demo just
 ### Gestures and Animations
 [decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
 
-
 ### Techniques
-- .99 cliff
-- Custom animations w/ setNativeProps
+- How to use setNativeProps
 - Using d3-interpolate
 - Animating SVG paths
+- .99 cliff
+
 
 ### Basic Real World
 - [Dynamic Animated Notification](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedNotification)
+
 - [Stagger Form Field Visibilty](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerFormFields)
+
 - [Fade in backdrop, expanding image with sliding information](https://gitlab.com/codedaily/reactnativeanimations/tree/fadeDelayAndSlide)
+
 - [Animated Questionnaire - https://uimovement.com/ui/3214/questionnaire/](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedQuestionnaire)
 
 ### Advanced Real World
