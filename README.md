@@ -40,13 +40,12 @@ If you've made modifications and it will not let you check out another demo just
 [stagger]((https://gitlab.com/codedaily/reactnativeanimations/tree/stagger)
 [delay](https://gitlab.com/codedaily/reactnativeanimations/tree/delay)
 [decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
+[event](https://gitlab.com/codedaily/reactnativeanimations/tree/event)
 // react-native-tab-view
 [add](https://gitlab.com/codedaily/reactnativeanimations/tree/add)
 [divide](https://gitlab.com/codedaily/reactnativeanimations/tree/divide)
 [modulo](https://gitlab.com/codedaily/reactnativeanimations/tree/modulo)
 [multiply](https://gitlab.com/codedaily/reactnativeanimations/tree/multiply)
-//
-[event](https://gitlab.com/codedaily/reactnativeanimations/tree/event)
 //header
 [diffClamp](https://gitlab.com/codedaily/reactnativeanimations/tree/diffClamp)
 
@@ -67,9 +66,10 @@ If you've made modifications and it will not let you check out another demo just
 ### Techniques
 - [How to use setNativeProps](https://gitlab.com/codedaily/reactnativeanimations/tree/setNativeProps)
 - [How createAnimatedComponent works](https://github.com/facebook/react-native/blob/master/Libraries/Animated/src/AnimatedImplementation.js#L1734) - no git branch here
-- Using d3-interpolate
 
-- Animating SVG paths
+- [Using d3-interpolate with Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/d3Interpolate)
+
+- [Animating SVG paths w/ d3-interpolate and Animated]()
 
 - .99 cliff
 
