@@ -78,6 +78,5 @@ If you've made modifications and it will not let you check out another demo just
 - [Animated Questionnaire - https://uimovement.com/ui/3214/questionnaire/](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedQuestionnaire)
 
 ### Advanced Real World
-- UIMovement stuff
 - https://uimovement.com/ui/2649/writer/
 - https://uimovement.com/ui/304/text-editor-animation/
