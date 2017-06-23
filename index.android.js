@@ -8,7 +8,8 @@ export default class animations extends Component {
   startAnimation = () => {
     Animated.timing(this.state.animation, {
       toValue: 300,
-      duration: 1500
+      duration: 1500,
+      useNativeDriver: true,
     }).start(() => {
       this.state.animation.setValue(0);
     });
