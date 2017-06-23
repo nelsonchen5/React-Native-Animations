@@ -10,11 +10,13 @@ export default class animations extends Component {
     Animated.spring(this.state.animation, {
       toValue: 2,
       friction: 2,
-      tension: 160
+      tension: 160,
+      useNativeDriver: true,
     }).start(() => {
       Animated.timing(this.state.animation, {
         toValue: 1,
-        duration: 100
+        duration: 100,
+        useNativeDriver: true,
       }).start();
     });
   }
