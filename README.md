@@ -65,9 +65,12 @@ If you've made modifications and it will not let you check out another demo just
 [decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
 
 ### Techniques
-- How to use setNativeProps
+- [How to use setNativeProps](https://gitlab.com/codedaily/reactnativeanimations/tree/setNativeProps)
+
 - Using d3-interpolate
+
 - Animating SVG paths
+
 - .99 cliff
 
 
