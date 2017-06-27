@@ -76,19 +76,26 @@ If you've made modifications and it will not let you check out another demo just
 
 - [Animating SVG paths w/ Art and Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/svgPathsAndAnimated)
 
+- [Animating SVG paths w/ Flubber and Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/svgPathsFlubberAnimated) 
+
 ### Techniques
 
 - .99 cliff
 
 
-### Basic Real World
-- [Dynamic Animated Notification](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedNotification)
+### Basic Real World 
+
+## DISECT ANIMATION VIDEOS
 
 - [Stagger Form Field Visibilty](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerFormFields)
+
+- [Dynamic Animated Notification](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedNotification)
 
 - [Fade in backdrop, expanding image with sliding information](https://gitlab.com/codedaily/reactnativeanimations/tree/fadeDelayAndSlide)
 
 - [Animated Questionnaire - https://uimovement.com/ui/3214/questionnaire/](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedQuestionnaire)
+
+- Adding item to end of list? Animate in
 
 ### Advanced Real World
 - https://uimovement.com/ui/2649/writer/
