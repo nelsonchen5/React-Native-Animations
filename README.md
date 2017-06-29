@@ -69,7 +69,6 @@ If you've made modifications and it will not let you check out another demo just
 
 - [How to use setNativeProps](https://gitlab.com/codedaily/reactnativeanimations/tree/setNativeProps)
 
-
 - [Using d3-interpolate with Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/d3Interpolate)
 
 - [Animating SVG paths w/ d3-interpolate and Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/svgPathsAndAnimated)
@@ -87,6 +86,8 @@ If you've made modifications and it will not let you check out another demo just
 
 ## DISECT ANIMATION VIDEOS
 
+- Animated Button with centered spinner
+
 - [Stagger Form Field Visibilty](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerFormFields)
 
 - [Dynamic Animated Notification](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedNotification)
@@ -94,8 +95,6 @@ If you've made modifications and it will not let you check out another demo just
 - [Fade in backdrop, expanding image with sliding information](https://gitlab.com/codedaily/reactnativeanimations/tree/fadeDelayAndSlide)
 
 - [Animated Questionnaire - https://uimovement.com/ui/3214/questionnaire/](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedQuestionnaire)
-
-- Adding item to end of list? Animate in
 
 ### Advanced Real World
 - https://uimovement.com/ui/2649/writer/
