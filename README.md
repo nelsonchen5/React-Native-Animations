@@ -86,7 +86,9 @@ If you've made modifications and it will not let you check out another demo just
 
 ## DISECT ANIMATION VIDEOS
 
-- Animated Button with centered spinner
+- [Animated Button with Centered Spinner](https://gitlab.com/codedaily/reactnativeanimations/tree/buttonWithSpinner)
+
+- Animated Button with Progress Bar (https://demo.tutorialzine.com/2013/10/buttons-built-in-progress-meters/)
 
 - [Stagger Form Field Visibilty](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerFormFields)
 
