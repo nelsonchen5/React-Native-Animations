@@ -30,7 +30,7 @@ export default class animations extends Component {
   };
 
   componentDidMount() {
-    Animated.stagger(200, [
+    Animated.stagger(100, [
       Animated.timing(this.state.email, {
         toValue: 1,
         duration: 200
@@ -56,30 +56,31 @@ export default class animations extends Component {
 
     return (
       <View style={styles.container}>
-        <Image source={Background} resizeMode="cover" style={StyleSheet.absoluteFill} />
-        <View style={styles.container} />
-        <View style={styles.form}>
-          <View style={styles.container}>
-            <Text style={styles.title}>Login</Text>
-            <AnimatedTextInput
-              ref={(email) => this._email = email}
-              style={[styles.input, emailStyle]}
-              placeholder="Email"
-              keyboardType="email-address"
-            />
-            <AnimatedTextInput
-              placeholder="Password"
-              style={[styles.input, passwordStyle]}
-              secureTextEntry
-            />
-            <TouchableOpacity>
-              <Animated.View style={[styles.button, buttonStyle]}>
-                <Text style={styles.buttonText}>Login</Text>
-              </Animated.View>
-            </TouchableOpacity>
+        <Image source={Background} resizeMode="cover" style={[StyleSheet.absoluteFill, { width: null, height: null }] }>
+          <View style={styles.container} />
+          <View style={styles.form}>
+            <View style={styles.container}>
+              <Text style={styles.title}>Login</Text>
+              <AnimatedTextInput
+                ref={(email) => this._email = email}
+                style={[styles.input, emailStyle]}
+                placeholder="Email"
+                keyboardType="email-address"
+              />
+              <AnimatedTextInput
+                placeholder="Password"
+                style={[styles.input, passwordStyle]}
+                secureTextEntry
+              />
+              <TouchableOpacity>
+                <Animated.View style={[styles.button, buttonStyle]}>
+                  <Text style={styles.buttonText}>Login</Text>
+                </Animated.View>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
-        <View style={styles.container} />
+          <View style={styles.container} />
+        </Image>
       </View>
     );
 
