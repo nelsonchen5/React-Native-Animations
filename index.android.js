@@ -43,3 +43,5 @@ const styles = StyleSheet.create({
     backgroundColor: "tomato",
   }
 });
+
+AppRegistry.registerComponent("animations", () => animations);
