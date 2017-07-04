@@ -63,6 +63,7 @@ If you've made modifications and it will not let you check out another demo just
 ### Gestures and Animations
 [tinder](https://gitlab.com/codedaily/reactnativeanimations/tree/tinder)
 [staggerHeads](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerHeads)
+[decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
 
 ### Understand and Build Custom Animations
 
