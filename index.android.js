@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Animated, TouchableWithoutFeedback } from "react-native";
+import { StyleSheet, View, Animated, TouchableWithoutFeedback } from "react-native";
 
 export default class animations extends Component {
   state = {
@@ -43,5 +43,3 @@ const styles = StyleSheet.create({
     backgroundColor: "tomato",
   }
 });
-
-AppRegistry.registerComponent("animations", () => animations);
