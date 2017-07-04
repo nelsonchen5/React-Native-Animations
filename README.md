@@ -93,10 +93,13 @@ If you've made modifications and it will not let you check out another demo just
 
 ## DISECT ANIMATION VIDEOS
 
+<<<<<<< HEAD
 - [Animate to the 4 corners](https://gitlab.com/codedaily/reactnativeanimations/tree/4corners)
 - [Tinder Swiper](https://gitlab.com/codedaily/reactnativeanimations/tree/tinder)
 - [Staggered Head Drag](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerHeads)
 
+=======
+>>>>>>> 99bbe98... Rename branch
 - [Animated Button with Progress Bar](https://gitlab.com/codedaily/reactnativeanimations/tree/buttonWithProgress) - https://demo.tutorialzine.com/2013/10/buttons-built-in-progress-meters/
 
 - [Stagger Form Field Visibility](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerFormFields)
@@ -106,8 +109,15 @@ If you've made modifications and it will not let you check out another demo just
 - [Animated Questionnaire - https://uimovement.com/ui/3214/questionnaire/](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedQuestionnaire)
 
 ### Advanced Real World
+<<<<<<< HEAD
 - [Photo Grid Shared Elements](https://gitlab.com/codedaily/reactnativeanimations/tree/photoGrid)
 - [Floating Button Menu with Background Cover](https://gitlab.com/codedaily/reactnativeanimations/tree/fabButtonMenu)
 - [App Intro](https://gitlab.com/codedaily/reactnativeanimations/tree/appIntro)
 - [Animated Color Picker Bar - https://uimovement.com/ui/304/text-editor-animation/](https://gitlab.com/codedaily/reactnativeanimations/tree/colorPicker)
 - [Evolving Write Button - https://uimovement.com/ui/2649/writer/](https://gitlab.com/codedaily/reactnativeanimations/tree/writer)
+=======
+- [Shared Element Transition]()
+- [Fade in backdrop, expanding image with sliding information](https://gitlab.com/codedaily/reactnativeanimations/tree/fadeDelayAndSlide)
+- [Evolving Write Button](https://uimovement.com/ui/2649/writer/)
+- [Animated Color Picker Bar](https://uimovement.com/ui/304/text-editor-animation/)
+>>>>>>> 99bbe98... Rename branch
