@@ -17,8 +17,8 @@ If you've made modifications and it will not let you check out another demo just
 - Understanding Internals
 
 ### Animating Properties
-[timing](https://gitlab.com/codedaily/reactnativeanimations/tree/timing)
 [timingOpacity](https://gitlab.com/codedaily/reactnativeanimations/tree/timingOpacity)
+[timingTranslate](https://gitlab.com/codedaily/reactnativeanimations/tree/timingTranslate)
 [timingScale](https://gitlab.com/codedaily/reactnativeanimations/tree/timingScale)
 [timingWidthHeight](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWidthHeight)
 [timingAbsolute](https://gitlab.com/codedaily/reactnativeanimations/tree/timingAbsolute)
