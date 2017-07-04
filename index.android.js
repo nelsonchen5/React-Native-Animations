@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Animated, TouchableWithoutFeedback } from "react-native";
+import { AppRegistry, StyleSheet, View, Animated, TouchableWithoutFeedback } from "react-native";
 
 export default class animations extends Component {
   state = {
