@@ -86,18 +86,16 @@ If you've made modifications and it will not let you check out another demo just
 
 ## DISECT ANIMATION VIDEOS
 
-- [Animated Button with Centered Spinner](https://gitlab.com/codedaily/reactnativeanimations/tree/buttonWithSpinner)
+- [Animated Button with Progress Bar](https://gitlab.com/codedaily/reactnativeanimations/tree/buttonWithProgress) - https://demo.tutorialzine.com/2013/10/buttons-built-in-progress-meters/
 
-- Animated Button with Progress Bar (https://demo.tutorialzine.com/2013/10/buttons-built-in-progress-meters/)
-
-- [Stagger Form Field Visibilty](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerFormFields)
+- [Stagger Form Field Visibility](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerFormFields)
 
 - [Dynamic Animated Notification](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedNotification)
-
-- [Fade in backdrop, expanding image with sliding information](https://gitlab.com/codedaily/reactnativeanimations/tree/fadeDelayAndSlide)
 
 - [Animated Questionnaire - https://uimovement.com/ui/3214/questionnaire/](https://gitlab.com/codedaily/reactnativeanimations/tree/animatedQuestionnaire)
 
 ### Advanced Real World
-- https://uimovement.com/ui/2649/writer/
-- https://uimovement.com/ui/304/text-editor-animation/
+- [Shared Element Transition]()
+- [Fade in backdrop, expanding image with sliding information](https://gitlab.com/codedaily/reactnativeanimations/tree/fadeDelayAndSlide)
+- [Evolving Write Button](https://uimovement.com/ui/2649/writer/)
+- [Animated Color Picker Bar](https://uimovement.com/ui/304/text-editor-animation/)
