@@ -22,12 +22,18 @@ export default class animations extends Component {
     const animatedInterpolate = this.state.animation.interpolate({
       inputRange: [0, 1, 2],
       outputRange: [0, 300, 0]
-    })
+    });
+
+    const interpolatedInterpolate = animatedInterpolate.interpolate({
+      inputRange: [0, 300],
+      outputRange: [1, .5]
+    });
 
     const animatedStyles = {
       transform: [
         { translateY: animatedInterpolate }
-      ]
+      ],
+      opacity: interpolatedInterpolate,
     }
     return (
       <View style={styles.container}>
