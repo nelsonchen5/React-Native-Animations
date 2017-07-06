@@ -10,14 +10,22 @@ export default class animations extends Component {
       toValue: 300,
       duration: 1500
     }).start(() => {
-      this.state.animation.setValue(0);
+      Animated.timing(this.state.animation, {
+        toValue: 0,
+        duration: 200
+      }).start();
     });
   }
   
   render() {
+
+    const randomValue = new Animated.Value(50);
+    // const randomValue = 50;
+    const newAnimation = Animated.add(this.state.animation, randomValue)
+
     const animatedStyles = {
       transform: [
-        { translateY: this.state.animation }
+        { translateY: newAnimation }
       ]
     }
     return (
