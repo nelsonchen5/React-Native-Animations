@@ -7,7 +7,7 @@ export default class animations extends Component {
   };
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: 300,
+      toValue: 1,
       duration: 1500
     }).start(() => {
       this.state.animation.setValue(0);
@@ -15,9 +15,23 @@ export default class animations extends Component {
   }
   
   render() {
+
+    const xInterpolate = this.state.animation.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["0deg", "360deg"]
+      // outputRange: ["0rad", "6.28319rad"]
+    });
+
+    const yInterpolate = this.state.animation.interpolate({
+      inputRange: [0, .5, 1],
+      outputRange: ["0deg", "0deg", "180deg"]
+      // outputRange: ["0rad", "0rad", "3.141595rad"]
+    });
+
     const animatedStyles = {
       transform: [
-        { translateY: this.state.animation }
+        { rotateX: xInterpolate },
+        { rotateY: yInterpolate }
       ]
     }
     return (
