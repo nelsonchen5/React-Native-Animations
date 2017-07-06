@@ -83,11 +83,15 @@ If you've made modifications and it will not let you check out another demo just
 ### Techniques
 
 - .99 cliff
+- Animating Components Away
 
 
 ### Basic Real World 
 
 ## DISECT ANIMATION VIDEOS
+
+- [Tinder Swiper]()
+- [Staggered Head Drag]()
 
 - [Animated Button with Progress Bar](https://gitlab.com/codedaily/reactnativeanimations/tree/buttonWithProgress) - https://demo.tutorialzine.com/2013/10/buttons-built-in-progress-meters/
 
