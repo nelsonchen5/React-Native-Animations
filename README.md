@@ -43,7 +43,6 @@ If you've made modifications and it will not let you check out another demo just
 [divide](https://gitlab.com/codedaily/reactnativeanimations/tree/divide)
 [modulo](https://gitlab.com/codedaily/reactnativeanimations/tree/modulo)
 [multiply](https://gitlab.com/codedaily/reactnativeanimations/tree/multiply)
-//header
 [createAnimatedComponent](https://gitlab.com/codedaily/reactnativeanimations/tree/createAnimatedComponent)
 
 ### Combining Animations
