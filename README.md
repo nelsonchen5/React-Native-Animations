@@ -47,7 +47,7 @@ If you've made modifications and it will not let you check out another demo just
 [modulo](https://gitlab.com/codedaily/reactnativeanimations/tree/modulo)
 [multiply](https://gitlab.com/codedaily/reactnativeanimations/tree/multiply)
 //header
-[diffClamp](https://gitlab.com/codedaily/reactnativeanimations/tree/diffClamp)
+[createAnimatedComponent](https://gitlab.com/codedaily/reactnativeanimations/tree/createAnimatedComponent)
 
 ### Combining Animations
 [parallel](https://gitlab.com/codedaily/reactnativeanimations/tree/parallel)
