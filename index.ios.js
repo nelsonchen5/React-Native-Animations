@@ -7,7 +7,7 @@ export default class animations extends Component {
   };
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: 300,
+      toValue: 50,
       duration: 1500
     }).start(() => {
       Animated.timing(this.state.animation, {
@@ -19,9 +19,9 @@ export default class animations extends Component {
   
   render() {
 
-    const randomValue = new Animated.Value(50);
-    // const randomValue = 50;
-    const newAnimation = Animated.add(this.state.animation, randomValue)
+    const randomValue = new Animated.Value(6);
+    // const randomValue = 6;
+    const newAnimation = Animated.multiply(this.state.animation, randomValue)
 
     const animatedStyles = {
       transform: [
