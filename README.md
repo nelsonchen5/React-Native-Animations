@@ -51,6 +51,13 @@ If you've made modifications and it will not let you check out another demo just
 [stagger](https://gitlab.com/codedaily/reactnativeanimations/tree/stagger)
 [delay](https://gitlab.com/codedaily/reactnativeanimations/tree/delay)
 
+## Interpolation
+[interpolateNumber](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateNumber)
+[interpolateColors](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateColors)
+[interpolateRotation](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateRotation)
+[interpolateExtrapolate](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateExtrapolate)
+
+
 ### Using Native Driver
 [timingNative](https://gitlab.com/codedaily/reactnativeanimations/tree/timingNative)
 [springNative](https://gitlab.com/codedaily/reactnativeanimations/tree/timingSpring)
