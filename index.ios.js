@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Animated, TouchableWithoutFeedback } from "react-native";
+import { AppRegistry, Button, StyleSheet, Text, View, Animated, TouchableWithoutFeedback } from "react-native";
+
+
+const AnimatedButton = Animated.createAnimatedComponent(Button);
 
 export default class animations extends Component {
   state = {
@@ -7,24 +10,29 @@ export default class animations extends Component {
   };
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: 300,
+      toValue: 1,
       duration: 1500
     }).start(() => {
-      this.state.animation.setValue(0);
+      Animated.timing(this.state.animation, {
+        toValue: 0,
+        duration: 300
+      }).start();
     });
   }
   
   render() {
-    const animatedStyles = {
-      transform: [
-        { translateY: this.state.animation }
-      ]
-    }
+    const animatedColor = this.state.animation.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["rgb(255,99,71)", "rgb(99,71,255)"]
+    });
+
     return (
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={this.startAnimation}>
-          <Animated.View style={[styles.box, animatedStyles]} />
-        </TouchableWithoutFeedback>
+        <AnimatedButton
+          title="Press Me"
+          onPress={this.startAnimation}
+          color={animatedColor}
+        />
       </View>
     );
 
@@ -37,11 +45,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  box: {
-    width: 150,
-    height: 150,
-    backgroundColor: "tomato",
-  }
 });
 
 AppRegistry.registerComponent("animations", () => animations);
