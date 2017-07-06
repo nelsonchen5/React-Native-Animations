@@ -7,17 +7,26 @@ export default class animations extends Component {
   };
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: 300,
+      toValue: 1,
       duration: 1500
     }).start(() => {
-      this.state.animation.setValue(0);
+      Animated.timing(this.state.animation, {
+        toValue: 2,
+        duration: 300
+      }).start();
     });
   }
   
   render() {
+
+    const animatedInterpolate = this.state.animation.interpolate({
+      inputRange: [0, 1, 2],
+      outputRange: [0, 300, 0]
+    })
+
     const animatedStyles = {
       transform: [
-        { translateY: this.state.animation }
+        { translateY: animatedInterpolate }
       ]
     }
     return (
