@@ -4,24 +4,24 @@ import { AppRegistry, StyleSheet, Text, View, Animated, TouchableWithoutFeedback
 export default class animations extends Component {
   state = {
     animation: new Animated.Value(0),
+    position: new Animated.Value(0)
   };
   startAnimation = () => {
-    Animated.timing(this.state.animation, {
-      toValue: 300,
-      duration: 1500
-    }).start(() => {
+    Animated.parallel([
       Animated.timing(this.state.animation, {
-        toValue: 0,
-        duration: 200
-      }).start();
-    });
+        toValue: 100,
+        duration: 1500
+      }),
+      Animated.timing(this.state.position, {
+        toValue: 24,
+        duration: 1500
+      })
+    ]).start();
   }
   
   render() {
-
-    const randomValue = new Animated.Value(2);
-    // const randomValue = 2;
-    const newAnimation = Animated.divide(this.state.animation, randomValue)
+    const randomValue = 3;
+    const newAnimation = Animated.multiply(this.state.position, Animated.modulo(this.state.animation, randomValue))
 
     const animatedStyles = {
       transform: [
