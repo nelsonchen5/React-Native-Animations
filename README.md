@@ -26,10 +26,8 @@ If you've made modifications and it will not let you check out another demo just
 [timingRotation](https://gitlab.com/codedaily/reactnativeanimations/tree/timingRotation)
 [timingWidthHeightPercentage](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWidthHeightPercentage)
 
-### Additional Animated Timing
+### Easing
 [timingWithEasing](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWithEasing)
-
-### Animated.Value/ValueXY
 
 ### Animated Functions
 [timing](https://gitlab.com/codedaily/reactnativeanimations/tree/timing)
@@ -41,7 +39,6 @@ If you've made modifications and it will not let you check out another demo just
 [delay](https://gitlab.com/codedaily/reactnativeanimations/tree/delay)
 [decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
 [event](https://gitlab.com/codedaily/reactnativeanimations/tree/event)
-// react-native-tab-view
 [add](https://gitlab.com/codedaily/reactnativeanimations/tree/add)
 [divide](https://gitlab.com/codedaily/reactnativeanimations/tree/divide)
 [modulo](https://gitlab.com/codedaily/reactnativeanimations/tree/modulo)
