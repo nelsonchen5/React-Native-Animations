@@ -8,7 +8,8 @@ export default class animations extends Component {
     heads: [
       {
         image: Vjeux,
-        animation: new Animated.ValueXY()
+        animation: new Animated.ValueXY(),
+        text: "Drag Me"
       },
       {
         image: Vjeux,
@@ -32,7 +33,8 @@ export default class animations extends Component {
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: () => {
         this.state.heads.map(({ animation }) => {
-          animation.extractOffset()
+          animation.extractOffset();
+          // setValue Animated bug fix
           animation.setValue({ x: 0, y: 0});
         });
       },
@@ -47,9 +49,9 @@ export default class animations extends Component {
         const animations = this.state.heads.slice(1).map(({ animation }, index) => {
           return (
             Animated.sequence([
-              Animated.delay(index * 6),
+              Animated.delay(index * 10),
               Animated.spring(animation, {
-                toValue: { x: dx, y: dy },
+                toValue: { x: dx , y: dy },
               })
             ]).start()
           )
@@ -62,16 +64,18 @@ export default class animations extends Component {
     return (
       <View style={styles.container}>
         {
-          this.state.heads.reverse().map((item, index) => {
-            const pan = index === 3 ? this._panResponder.panHandlers : {};
+          this.state.heads.slice(0).reverse().map((item, index, items) => {
+            const pan = index === (items.length - 1) ? this._panResponder.panHandlers : {};
 
             return (
               <Animated.Image
                 {...pan}
                 key={index}
                 source={item.image}
-                style={[styles.head, { zIndex: index, transform: item.animation.getTranslateTransform() }]}
-              />
+                style={[styles.head, { transform: item.animation.getTranslateTransform() }]}
+              >
+                <Text>{item.text}</Text>
+              </Animated.Image>
             )
           })
         }
@@ -92,6 +96,8 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 40,
     position: "absolute",
+    alignItems: "center",
+    justifyContent: "center",
   }
 });
 
