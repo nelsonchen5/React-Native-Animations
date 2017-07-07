@@ -90,9 +90,9 @@ If you've made modifications and it will not let you check out another demo just
 
 ## DISECT ANIMATION VIDEOS
 
-- [Animate to the 4 corners]()
-- [Tinder Swiper]()
-- [Staggered Head Drag]()
+- [Animate to the 4 corners](https://gitlab.com/codedaily/reactnativeanimations/tree/4corners)
+- [Tinder Swiper](https://gitlab.com/codedaily/reactnativeanimations/tree/tinder)
+- [Staggered Head Drag](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerHeads)
 
 - [Animated Button with Progress Bar](https://gitlab.com/codedaily/reactnativeanimations/tree/buttonWithProgress) - https://demo.tutorialzine.com/2013/10/buttons-built-in-progress-meters/
 
