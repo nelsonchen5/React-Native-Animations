@@ -8,6 +8,7 @@ import {
   PanResponder,
   TouchableWithoutFeedback,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
 
 import clamp from "clamp";
@@ -82,31 +83,7 @@ export default class animations extends Component {
           Animated.decay(this.state.animation, {
             velocity: { x: velocity, y: vy },
             deceleration: 0.98,
-          }).start(() => {
-            Animated.parallel([
-              Animated.timing(this.state.opacity, {
-                toValue: 0,
-                duration: 300,
-              }),
-              Animated.timing(this.state.next, {
-                toValue: 1,
-                duration: 300
-              })
-            ]).start(() => {
-              this.setState(
-                state => {
-                  return {
-                    items: state.items.slice(1),
-                  };
-                },
-                () => {
-                  this.state.next.setValue(.9);
-                  this.state.opacity.setValue(1);
-                  this.state.animation.setValue({ x: 0, y: 0 });
-                }
-              );
-            });
-          });
+          }).start(this.transitionNext);
         } else {
           Animated.spring(this.state.animation, {
             toValue: { x: 0, y: 0 },
@@ -116,6 +93,42 @@ export default class animations extends Component {
       },
     });
   }
+  transitionNext = () => {
+    Animated.parallel([
+      Animated.timing(this.state.opacity, {
+        toValue: 0,
+        duration: 300,
+      }),
+      Animated.timing(this.state.next, {
+        toValue: 1,
+        duration: 300
+      })
+    ]).start(() => {
+      this.setState(
+        state => {
+          return {
+            items: state.items.slice(1),
+          };
+        },
+        () => {
+          this.state.next.setValue(.9);
+          this.state.opacity.setValue(1);
+          this.state.animation.setValue({ x: 0, y: 0 });
+        }
+      );
+    });
+  }
+  handleNo = () => {
+    Animated.timing(this.state.animation.x, {
+      toValue: -SWIPE_THRESHOLD
+    }).start(this.transitionNext);
+  }
+  handleYes = () => {
+    Animated.timing(this.state.animation.x, {
+      toValue: SWIPE_THRESHOLD
+    }).start(this.transitionNext);
+  }
+
   componentWillUnmount() {
     this.state.animation.removeAllListeners();
   }
@@ -166,55 +179,89 @@ export default class animations extends Component {
 
     return (
       <View style={styles.container}>
-        {this.state.items.slice(0, 2).reverse().map(({ image, id, text }, index, items) => {
-          const isLastItem = index === items.length - 1;
-          const isSecondToLast = index === items.length - 2;
+        <View style={styles.top}>
+          {this.state.items.slice(0, 2).reverse().map(({ image, id, text }, index, items) => {
+            const isLastItem = index === items.length - 1;
+            const isSecondToLast = index === items.length - 2;
 
-          const panHandlers = isLastItem ? this._panResponder.panHandlers : {};
-          const cardStyle = isLastItem ? animatedCardStyles : undefined;
-          const imageStyle = isLastItem ? animatedImageStyles : undefined;
-          const nextStyle = isSecondToLast ? { transform: [ { scale: this.state.next }]} : undefined;
+            const panHandlers = isLastItem ? this._panResponder.panHandlers : {};
+            const cardStyle = isLastItem ? animatedCardStyles : undefined;
+            const imageStyle = isLastItem ? animatedImageStyles : undefined;
+            const nextStyle = isSecondToLast ? { transform: [ { scale: this.state.next }]} : undefined;
 
-          return (
-            <Animated.View {...panHandlers} style={[styles.card, cardStyle, nextStyle]} key={id}>
-              <Animated.Image
-                source={image}
-                style={[styles.image, imageStyle]}
-                resizeMode="cover"
-              />
-              <View style={styles.lowerText}>
-                <Text>
-                  {text}
-                </Text>
-              </View>
+            return (
+              <Animated.View {...panHandlers} style={[styles.card, cardStyle, nextStyle]} key={id}>
+                <Animated.Image
+                  source={image}
+                  style={[styles.image, imageStyle]}
+                  resizeMode="cover"
+                />
+                <View style={styles.lowerText}>
+                  <Text>
+                    {text}
+                  </Text>
+                </View>
 
-              {isLastItem &&
-                <Animated.View style={[styles.nope, animatedNopeStyles]}>
-                  <Text style={styles.nopeText}>Nope!</Text>
-                </Animated.View>}
+                {isLastItem &&
+                  <Animated.View style={[styles.nope, animatedNopeStyles]}>
+                    <Text style={styles.nopeText}>Nope!</Text>
+                  </Animated.View>}
 
-              {isLastItem &&
-                <Animated.View style={[styles.yup, animatedYupStyles]}>
-                  <Text style={styles.yupText}>Yup!</Text>
-                </Animated.View>}
-            </Animated.View>
-          );
-        })}
+                {isLastItem &&
+                  <Animated.View style={[styles.yup, animatedYupStyles]}>
+                    <Text style={styles.yupText}>Yup!</Text>
+                  </Animated.View>}
+              </Animated.View>
+            );
+          })}
+        </View>
+        <View style={styles.buttonBar}>
+          <TouchableOpacity onPress={this.handleNo} style={[styles.button, styles.nopeButton]}>
+            <Text style={styles.nopeText}>NO</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={this.handleYes} style={[styles.button, styles.yupButton]}>
+            <Text style={styles.yupText}>YES</Text>
+          </TouchableOpacity>
+        </View>
+
       </View>
     );
   }
 }
 
-/*
-  Add Yes/No buttons
-*/
-
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+  top: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
+  buttonBar: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingVertical: 10,
+  },  
+  button: {
+    marginHorizontal: 10,
+    padding: 20,
+    borderRadius: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowOpacity: 0.3,
+    shadowOffset: { x: 0, y: 0 },
+    shadowRadius: 5,
+  },
+  yupButton: {
+    shadowColor: "green",
+  },
+  nopeButton: {
+    shadowColor: "red",
+  },
+
   card: {
     width: 300,
     height: 300,
