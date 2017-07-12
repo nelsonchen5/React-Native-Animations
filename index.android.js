@@ -29,6 +29,7 @@ export default class animations extends Component {
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: (e, gestureState) => {
+        // this.state.animation.extractOffset();
         this.state.animation.setOffset({ x: this._x, y: this._y });
         this.state.animation.setValue({ x: 0, y: 0 });
       },
