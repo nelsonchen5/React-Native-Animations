@@ -43,7 +43,17 @@ export default class animations extends Component {
     });
 
     const progressStyle = {
+      // width: progressInterpolate,
+      // bottom: 0,
+
+      // height: progressInterpolate,
+      // right: 0,
+
+      top: null,
+      bottom: 0,
       width: progressInterpolate,
+      height: 5,
+
       opacity: this.state.opacity,
       backgroundColor: colorInterpolate,
     };
@@ -76,6 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingHorizontal: 60,
     paddingVertical: 10,
+    overflow: "hidden",
   },
   buttonText: {
     color: "#FFF",
@@ -86,7 +97,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 0,
     top: 0,
-    bottom: 0,
   },
   opacityBackground: {
     // backgroundColor: "rgba(255,255,255,.5)",
