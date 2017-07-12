@@ -84,7 +84,7 @@ If you've made modifications and it will not let you check out another demo just
 
 - [.99 cliff](https://gitlab.com/codedaily/reactnativeanimations/tree/99cliff)
 - [Animating Components Away](https://gitlab.com/codedaily/reactnativeanimations/tree/animateHidden)
-
+- [Interrupted Animations](https://gitlab.com/codedaily/reactnativeanimations/tree/interrupted)
 
 ### Basic Real World 
 
