@@ -106,4 +106,4 @@ If you've made modifications and it will not let you check out another demo just
 - [Shared Element Transition]()
 - [Fade in backdrop, expanding image with sliding information](https://gitlab.com/codedaily/reactnativeanimations/tree/fadeDelayAndSlide)
 - [Evolving Write Button](https://uimovement.com/ui/2649/writer/)
-- [Animated Color Picker Bar](https://uimovement.com/ui/304/text-editor-animation/)
+- [Animated Color Picker Bar - https://uimovement.com/ui/304/text-editor-animation/](https://gitlab.com/codedaily/reactnativeanimations/tree/colorPicker)
