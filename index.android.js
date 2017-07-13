@@ -24,34 +24,25 @@ export default class animations extends Component {
   };
 
   handleToggle = () => {
-    if (this._open) {
-      Animated.timing(this.state.animation, {
-        toValue: 0,
-        duration: 450,
-      }).start();
-    } else {
-      Animated.timing(this.state.animation, {
-        toValue: 1,
-        duration: 450,
-      }).start();
-    }
+    const toValue = this._open ? 0 : 1;
+    
+    Animated.timing(this.state.animation, {
+      toValue,
+      duration: 450,
+    }).start();
 
     this._open = !this._open;
   };
 
   toggleInput = () => {
-    
-    if (this._inputOpen) {
-      Animated.timing(this.state.buttonAnimation, {
-        toValue: 0,
-        duration: 350
-      }).start();
-    } else {
-      Animated.timing(this.state.buttonAnimation, {
-        toValue: 1,
-        duration: 350
-      }).start();
-    }
+    const toValue = this._inputOpen ? 0 : 1;
+    Animated.timing(this.state.buttonAnimation, {
+      toValue,
+      duration: 350
+    }).start(() => {
+      this._input.getNode().focus();
+    });
+
     this._inputOpen = !this._inputOpen;
     this.setState({ inputOpen: this._inputOpen })
   }
@@ -172,6 +163,7 @@ export default class animations extends Component {
                   value={this.state.color} 
                   style={[styles.input, inputStyle]}
                   onChangeText={(color) => this.setState({ color })}
+                  ref={(input) => this._input = input}
                 />
                 <TouchableWithoutFeedback onPress={this.toggleInput}>
                   <Animated.View style={[styles.okayButton, buttonStyle]}>
