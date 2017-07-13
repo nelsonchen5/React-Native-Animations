@@ -40,7 +40,10 @@ export default class animations extends Component {
       toValue,
       duration: 350
     }).start(() => {
-      this._input.getNode().focus();
+      // If opening focus
+      // If closing blur
+      this._inputOpen ? this._input.getNode().blur() : this._input.getNode().focus();
+
     });
 
     this._inputOpen = !this._inputOpen;
