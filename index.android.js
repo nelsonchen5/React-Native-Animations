@@ -70,7 +70,7 @@ export default class animations extends Component {
           style={[StyleSheet.absoluteFill, { width: null, height: null }]}
         >
           <View style={styles.container} />
-          <View style={styles.form}>
+          <KeyboardAvoidingView style={styles.form} behavior="padding">
             <View style={styles.container}>
               <Text style={styles.title}>Login</Text>
               <AnimatedTextInput
@@ -90,7 +90,7 @@ export default class animations extends Component {
                 </Animated.View>
               </TouchableOpacity>
             </View>
-          </View>
+          </KeyboardAvoidingView>
           <View style={styles.container} />
         </Image>
       </View>
