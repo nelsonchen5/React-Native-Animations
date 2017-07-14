@@ -42,8 +42,6 @@ export default class animations extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
   box: {
     width: 150,
