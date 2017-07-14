@@ -25,7 +25,7 @@ export default class animations extends Component {
   }
 
   handleOpenImage = index => {
-    this._gridImages[index].measure((x, y, width, height, pageX, pageY) => {
+    this._gridImages[index].getNode().measure((x, y, width, height, pageX, pageY) => {
 
       this._x = pageX,
       this._y = pageY;
@@ -45,6 +45,7 @@ export default class animations extends Component {
       this.setState(
         {
           activeImage: images[index],
+          activeIndex: index,
         },
         () => {
           this._viewImage.measure((tX, tY, tWidth, tHeight, tPageX, tPageY) => {
@@ -128,16 +129,23 @@ export default class animations extends Component {
       left: this.state.position.x,
     };
 
+    const activeIndexStyle = {
+      opacity: this.state.activeImage ? 0 : 1
+    }
+
     return (
       <View style={styles.container}>
         <ScrollView>
           <View style={styles.grid}>
             {images.map((src, index) => {
+
+              const style = index === this.state.activeIndex ? activeIndexStyle : undefined;
+
               return (
                 <TouchableWithoutFeedback key={index} onPress={() => this.handleOpenImage(index)}>
-                  <Image
+                  <Animated.Image
                     source={src}
-                    style={styles.gridImage}
+                    style={[styles.gridImage, style]}
                     resizeMode="cover"
                     ref={image => (this._gridImages[index] = image)}
                   />

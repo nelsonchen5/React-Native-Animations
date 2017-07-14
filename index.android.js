@@ -25,7 +25,7 @@ export default class animations extends Component {
   }
 
   handleOpenImage = index => {
-    this._gridImages[index].measure((x, y, width, height, pageX, pageY) => {
+    this._gridImages[index].getNode().measure((x, y, width, height, pageX, pageY) => {
 
       this._x = pageX,
       this._y = pageY;
@@ -45,10 +45,11 @@ export default class animations extends Component {
       this.setState(
         {
           activeImage: images[index],
+          activeIndex: index,
         },
         () => {
-
           this._viewImage.measure((tX, tY, tWidth, tHeight, tPageX, tPageY) => {
+
             Animated.parallel([
               Animated.spring(this.state.position.x, {
                 toValue: 0,
@@ -128,16 +129,23 @@ export default class animations extends Component {
       left: this.state.position.x,
     };
 
+    const activeIndexStyle = {
+      opacity: this.state.activeImage ? 0 : 1
+    }
+
     return (
       <View style={styles.container}>
         <ScrollView>
           <View style={styles.grid}>
             {images.map((src, index) => {
+
+              const style = index === this.state.activeIndex ? activeIndexStyle : undefined;
+
               return (
                 <TouchableWithoutFeedback key={index} onPress={() => this.handleOpenImage(index)}>
-                  <Image
+                  <Animated.Image
                     source={src}
-                    style={styles.gridImage}
+                    style={[styles.gridImage, style]}
                     resizeMode="cover"
                     ref={image => (this._gridImages[index] = image)}
                   />
@@ -146,21 +154,19 @@ export default class animations extends Component {
             })}
           </View>
         </ScrollView>
-
         <View
           style={StyleSheet.absoluteFill}
           pointerEvents={this.state.activeImage ? "auto" : "none"}
         >
           
-          <View style={styles.topContent} 
-            ref={image => (this._viewImage = image)}
-            onLayout={(e) => {
-              this._layout = {
-                width: e.nativeEvent.layout.width,
-                height: e.nativeEvent.layout.height
-              }
-            }}
-          />
+          <View style={styles.topContent} ref={image => (this._viewImage = image)}>
+            <Animated.Image
+              key={this.state.activeImage}
+              source={this.state.activeImage}
+              resizeMode="cover"
+              style={[styles.viewImage, activeImageStyle]}
+            />
+          </View>
           <Animated.View
             style={[styles.content, animtedContentStyles]}
             ref={content => (this._content = content)}
@@ -177,21 +183,12 @@ export default class animations extends Component {
               purus orci viverra metus, eget finibus neque turpis sed turpis.
             </Text>
           </Animated.View>
+          <TouchableWithoutFeedback onPress={this.handleClose}>
+            <Animated.View style={[styles.close, animatedClose]}>
+              <Text style={styles.closeText}>X</Text>
+            </Animated.View>
+          </TouchableWithoutFeedback>
         </View>
-        
-        <Animated.Image
-          key={this.state.activeImage}
-          source={this.state.activeImage}
-          resizeMode="cover"
-          style={[styles.viewImage, activeImageStyle]}
-        />
-
-        <TouchableWithoutFeedback onPress={this.handleClose}>
-          <Animated.View style={[styles.close, animatedClose]}>
-            <Text style={styles.closeText}>X</Text>
-          </Animated.View>
-        </TouchableWithoutFeedback>
-
       </View>
     );
   }
