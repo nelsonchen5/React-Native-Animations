@@ -1,68 +1,80 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, TextInput, TouchableOpacity, View, Image, Animated } from "react-native";
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+  Image,
+  Animated,
+  KeyboardAvoidingView
+} from "react-native";
 
 import Background from "./background.jpg";
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
-const createAnimationStyle = (animation) => {
+const createAnimationStyle = animation => {
   const translateY = animation.interpolate({
     inputRange: [0, 1],
-    outputRange: [-5, 0]
+    outputRange: [-5, 0],
   });
 
   return {
     opacity: animation,
     transform: [
-      { 
-        translateY
-      }
-    ]
-  }
-
-}
+      {
+        translateY,
+      },
+    ],
+  };
+};
 
 export default class animations extends Component {
   state = {
     email: new Animated.Value(0),
     password: new Animated.Value(0),
-    button: new Animated.Value(0)
+    button: new Animated.Value(0),
   };
 
   componentDidMount() {
     Animated.stagger(100, [
       Animated.timing(this.state.email, {
         toValue: 1,
-        duration: 200
+        duration: 200,
       }),
       Animated.timing(this.state.password, {
         toValue: 1,
-        duration: 200
+        duration: 200,
       }),
       Animated.timing(this.state.button, {
         toValue: 1,
-        duration: 200
-      })
+        duration: 200,
+      }),
     ]).start(() => {
       this._email.getNode().focus();
     });
   }
-  
-  render() {
 
+  render() {
     const emailStyle = createAnimationStyle(this.state.email);
     const passwordStyle = createAnimationStyle(this.state.password);
     const buttonStyle = createAnimationStyle(this.state.button);
 
     return (
       <View style={styles.container}>
-        <Image source={Background} resizeMode="cover" style={[StyleSheet.absoluteFill, { width: null, height: null }] }>
+        <Image
+          source={Background}
+          resizeMode="cover"
+          style={[StyleSheet.absoluteFill, { width: null, height: null }]}
+        >
           <View style={styles.container} />
           <View style={styles.form}>
             <View style={styles.container}>
               <Text style={styles.title}>Login</Text>
               <AnimatedTextInput
-                ref={(email) => this._email = email}
+                ref={email => (this._email = email)}
                 style={[styles.input, emailStyle]}
                 placeholder="Email"
                 keyboardType="email-address"
@@ -83,7 +95,6 @@ export default class animations extends Component {
         </Image>
       </View>
     );
-
   }
 }
 
@@ -114,7 +125,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: "#FFF",
     color: "#333",
-    backgroundColor: "#FFF"
+    backgroundColor: "#FFF",
   },
   button: {
     marginTop: 10,
@@ -127,7 +138,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#FFF",
     fontSize: 16,
-  }
+  },
 });
 
 AppRegistry.registerComponent("animations", () => animations);
