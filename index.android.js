@@ -142,26 +142,26 @@ export default class animations extends Component {
       outputRange: [0.5, 1, 0.5],
     });
 
-    const yupOpacity = animation.x.interpolate({ inputRange: [0, 150], outputRange: [0, 1] });
-    const yupScale = animation.x.interpolate({
+    const yesOpacity = animation.x.interpolate({ inputRange: [0, 150], outputRange: [0, 1] });
+    const yesScale = animation.x.interpolate({
       inputRange: [0, 150],
       outputRange: [0.5, 1],
       extrapolate: "clamp",
     });
     const animatedYupStyles = {
-      transform: [{ scale: yupScale }, { rotate: "-30deg" }],
-      opacity: yupOpacity,
+      transform: [{ scale: yesScale }, { rotate: "-30deg" }],
+      opacity: yesOpacity,
     };
 
-    const nopeOpacity = animation.x.interpolate({ inputRange: [-150, 0], outputRange: [1, 0] });
-    const nopeScale = animation.x.interpolate({
+    const noOpacity = animation.x.interpolate({ inputRange: [-150, 0], outputRange: [1, 0] });
+    const noScale = animation.x.interpolate({
       inputRange: [-150, 0],
       outputRange: [1, 0.5],
       extrapolate: "clamp",
     });
     const animatedNopeStyles = {
-      transform: [{ scale: nopeScale }, { rotate: "30deg" }],
-      opacity: nopeOpacity,
+      transform: [{ scale: noScale }, { rotate: "30deg" }],
+      opacity: noOpacity,
     };
 
     const animatedCardStyles = {
