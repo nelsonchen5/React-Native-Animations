@@ -62,7 +62,7 @@ If you've made modifications and it will not let you check out another demo just
 
 ### Gestures and Animations
 [PanResponder]()
-[Draggable Card]()
+[draggableCard]()
 [Tinder Explained]()
 [Staggered Heads]()
 
