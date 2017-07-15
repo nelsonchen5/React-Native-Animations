@@ -17,12 +17,12 @@ export default class animations extends Component {
     if (this._open) {
       Animated.timing(this.state.animation, {
         toValue: 0,
-        duration: 500
+        duration: 300
       }).start();
     } else {
       Animated.timing(this.state.animation, {
         toValue: 1,
-        duration: 500
+        duration: 300
       }).start();
     }
     this._open = !this._open;

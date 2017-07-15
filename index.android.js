@@ -6,7 +6,7 @@ import {
   Animated,
   Text,
   TouchableOpacity,
-  TouchableNativeFeedback,
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 export default class animations extends Component {
@@ -17,12 +17,12 @@ export default class animations extends Component {
     if (this._open) {
       Animated.timing(this.state.animation, {
         toValue: 0,
-        duration: 500
+        duration: 300
       }).start();
     } else {
       Animated.timing(this.state.animation, {
         toValue: 1,
-        duration: 500
+        duration: 300
       }).start();
     }
     this._open = !this._open;
@@ -98,15 +98,12 @@ export default class animations extends Component {
           <Animated.Text style={[styles.label, labelStyle]}>Reload</Animated.Text>
           <Text style={styles.otherText}>ICON</Text>
         </TouchableOpacity>
-        <TouchableNativeFeedback 
-          onPress={this.toggleOpen} 
-          useForeground
-        >
+        <TouchableWithoutFeedback onPress={this.toggleOpen}>
           <View style={[styles.button, styles.pay]}>
             <Animated.Text style={[styles.label, labelStyle]}>Pay</Animated.Text>
             <Text style={styles.payText}>$5.00</Text>
           </View>
-        </TouchableNativeFeedback>
+        </TouchableWithoutFeedback>
       </View>
     );
   }
@@ -128,20 +125,16 @@ const styles = StyleSheet.create({
   button: {
     width: 60,
     height: 60,
-    borderRadius: 30,
     alignItems: "center",
     justifyContent: "center",
+    shadowColor: "#333",
+    shadowOpacity: .1,
+    shadowOffset: { x: 2, y: 0 },
+    shadowRadius: 2,
+    borderRadius: 30,
     position: "absolute",
     bottom: 20,
     right: 20,
-  },
-  innerButton: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    overflow: "hidden",
-    alignItems: "center",
-    justifyContent: "center",
   },
   other: {
     backgroundColor: "#FFF",
