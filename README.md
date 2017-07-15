@@ -61,10 +61,8 @@ If you've made modifications and it will not let you check out another demo just
 [scrollNative](https://gitlab.com/codedaily/reactnativeanimations/tree/scrollNative)
 
 ### Gestures and Animations
-[PanResponder]()
-[draggableCard]()
 [Tinder Explained]()
-[Staggered Heads]()
+[Staggered Heads](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerHeads)
 
 ### Understand and Build Custom Animations
 
