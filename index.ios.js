@@ -1,5 +1,14 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Image, Animated, PanResponder, Easing } from "react-native";
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Animated,
+  PanResponder,
+  Easing,
+} from "react-native";
 
 import Vjeux from "./vjeux.jpg";
 
@@ -9,25 +18,24 @@ export default class animations extends Component {
       {
         image: Vjeux,
         animation: new Animated.ValueXY(),
-        text: "Drag Me"
+        text: "Drag Me",
       },
       {
         image: Vjeux,
-        animation: new Animated.ValueXY()
+        animation: new Animated.ValueXY(),
       },
       {
         image: Vjeux,
-        animation: new Animated.ValueXY()
+        animation: new Animated.ValueXY(),
       },
       {
         image: Vjeux,
-        animation: new Animated.ValueXY()
-      }
-    ]
-  }
-  
-  componentWillMount() {
+        animation: new Animated.ValueXY(),
+      },
+    ],
+  };
 
+  componentWillMount() {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
@@ -35,53 +43,48 @@ export default class animations extends Component {
         this.state.heads.map(({ animation }) => {
           animation.extractOffset();
           // setValue Animated bug fix
-          animation.setValue({ x: 0, y: 0});
+          animation.setValue({ x: 0, y: 0 });
         });
       },
       onPanResponderMove: (e, { dx, dy }) => {
-        
         this.state.heads[0].animation.setValue({
           x: dx,
-          y: dy
+          y: dy,
         });
-        
 
         const animations = this.state.heads.slice(1).map(({ animation }, index) => {
-          return (
-            Animated.sequence([
-              Animated.delay(index * 10),
-              Animated.spring(animation, {
-                toValue: { x: dx , y: dy },
-              })
-            ]).start()
-          )
-        })
-      }
+          return Animated.sequence([
+            Animated.delay(index * 10),
+            Animated.spring(animation, {
+              toValue: { x: dx, y: dy },
+            }),
+          ]).start();
+        });
+      },
     });
   }
-  
+
   render() {
     return (
       <View style={styles.container}>
-        {
-          this.state.heads.slice(0).reverse().map((item, index, items) => {
-            const pan = index === (items.length - 1) ? this._panResponder.panHandlers : {};
+        {this.state.heads.slice(0).reverse().map((item, index, items) => {
+          const pan = index === items.length - 1 ? this._panResponder.panHandlers : {};
 
-            return (
-              <Animated.Image
-                {...pan}
-                key={index}
-                source={item.image}
-                style={[styles.head, { transform: item.animation.getTranslateTransform() }]}
-              >
-                <Text>{item.text}</Text>
-              </Animated.Image>
-            )
-          })
-        }
+          return (
+            <Animated.Image
+              {...pan}
+              key={index}
+              source={item.image}
+              style={[styles.head, { transform: item.animation.getTranslateTransform() }]}
+            >
+              <Text>
+                {item.text}
+              </Text>
+            </Animated.Image>
+          );
+        })}
       </View>
     );
-
   }
 }
 
@@ -98,7 +101,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     alignItems: "center",
     justifyContent: "center",
-  }
+  },
 });
 
 AppRegistry.registerComponent("animations", () => animations);
