@@ -47,15 +47,10 @@ export default class animations extends Component {
     ],
     animation: new Animated.ValueXY(),
     opacity: new Animated.Value(1),
-    next: new Animated.Value(.9)
+    next: new Animated.Value(0.9),
   };
 
   componentWillMount() {
-    this._x = 0;
-    this.state.animation.addListener(({ x }) => {
-      this._x = x;
-    });
-
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
@@ -69,9 +64,9 @@ export default class animations extends Component {
           dy: this.state.animation.y,
         },
       ]),
-      onPanResponderRelease: (e, { vx, vy }) => {
+      onPanResponderRelease: (e, { dx, vx, vy }) => {
         this.state.animation.flattenOffset();
-        var velocity;
+        let velocity;
 
         if (vx >= 0) {
           velocity = clamp(vx, 3, 5);
@@ -79,7 +74,7 @@ export default class animations extends Component {
           velocity = clamp(vx * -1, 3, 5) * -1;
         }
 
-        if (Math.abs(this._x) > SWIPE_THRESHOLD) {
+        if (Math.abs(dx) > SWIPE_THRESHOLD) {
           Animated.decay(this.state.animation, {
             velocity: { x: velocity, y: vy },
             deceleration: 0.98,
@@ -101,8 +96,8 @@ export default class animations extends Component {
       }),
       Animated.timing(this.state.next, {
         toValue: 1,
-        duration: 300
-      })
+        duration: 300,
+      }),
     ]).start(() => {
       this.setState(
         state => {
@@ -111,23 +106,23 @@ export default class animations extends Component {
           };
         },
         () => {
-          this.state.next.setValue(.9);
+          this.state.next.setValue(0.9);
           this.state.opacity.setValue(1);
           this.state.animation.setValue({ x: 0, y: 0 });
         }
       );
     });
-  }
+  };
   handleNo = () => {
     Animated.timing(this.state.animation.x, {
-      toValue: -SWIPE_THRESHOLD
+      toValue: -SWIPE_THRESHOLD,
     }).start(this.transitionNext);
-  }
+  };
   handleYes = () => {
     Animated.timing(this.state.animation.x, {
-      toValue: SWIPE_THRESHOLD
+      toValue: SWIPE_THRESHOLD,
     }).start(this.transitionNext);
-  }
+  };
 
   componentWillUnmount() {
     this.state.animation.removeAllListeners();
@@ -139,6 +134,7 @@ export default class animations extends Component {
     const rotate = animation.x.interpolate({
       inputRange: [-200, 0, 200],
       outputRange: ["-30deg", "0deg", "30deg"],
+      extrapolate: "clamp",
     });
 
     const opacity = animation.x.interpolate({
@@ -187,7 +183,9 @@ export default class animations extends Component {
             const panHandlers = isLastItem ? this._panResponder.panHandlers : {};
             const cardStyle = isLastItem ? animatedCardStyles : undefined;
             const imageStyle = isLastItem ? animatedImageStyles : undefined;
-            const nextStyle = isSecondToLast ? { transform: [ { scale: this.state.next }]} : undefined;
+            const nextStyle = isSecondToLast
+              ? { transform: [{ scale: this.state.next }] }
+              : undefined;
 
             return (
               <Animated.View {...panHandlers} style={[styles.card, cardStyle, nextStyle]} key={id}>
@@ -224,7 +222,6 @@ export default class animations extends Component {
             <Text style={styles.yupText}>YES</Text>
           </TouchableOpacity>
         </View>
-
       </View>
     );
   }
@@ -244,7 +241,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 10,
-  },  
+  },
   button: {
     marginHorizontal: 10,
     padding: 20,
