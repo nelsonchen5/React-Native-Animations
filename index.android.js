@@ -99,11 +99,7 @@ export default class animations extends Component {
 
     return (
       <View style={styles.container}>
-
-        <View
-          style={[styles.overlay, StyleSheet.absoluteFill]}
-          pointerEvents="box-none"
-        >
+        <View style={[styles.overlay, StyleSheet.absoluteFill]} pointerEvents="box-none">
           <View style={styles.questionContainer}>
             <Animated.Text style={[styles.questionText, mainQuestionStyle]}>
               {question}
@@ -118,11 +114,7 @@ export default class animations extends Component {
           <Animated.View style={[styles.bar, progressStyle]} />
         </View>
 
-        <TouchableOpacity
-          onPress={this.handleAnswer}
-          style={styles.option}
-          activeOpacity={0.7}
-        >
+        <TouchableOpacity onPress={this.handleAnswer} style={styles.option} activeOpacity={0.7}>
           <Text style={styles.optionText}>No</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -191,7 +183,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   yes: {
-    backgroundColor: "rgba(255,255,255,.1)"
+    backgroundColor: "rgba(255,255,255,.1)",
   },
   optionText: {
     fontSize: 30,
