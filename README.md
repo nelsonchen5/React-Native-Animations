@@ -80,9 +80,8 @@ If you've made modifications and it will not let you check out another demo just
 
 ### Techniques
 
-- [.99 cliff]()
-- [Animating Components Away]()
-- [Interrupted Animations]()
+- [.99 cliff](https://gitlab.com/codedaily/reactnativeanimations/tree/99cliff)
+- [Animating Components Away + Interrupted Animations](https://gitlab.com/codedaily/reactnativeanimations/tree/animateHidden)
 
 ### Basic Real World 
 
