@@ -1,11 +1,19 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Animated, PanResponder, Dimensions } from "react-native";
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Animated,
+  PanResponder,
+  Dimensions,
+} from "react-native";
 
 export default class animations extends Component {
   state = {
-    animation: new Animated.ValueXY()
-  }
-  
+    animation: new Animated.ValueXY(),
+  };
+
   componentWillMount() {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -17,35 +25,31 @@ export default class animations extends Component {
         null,
         {
           dx: this.state.animation.x,
-          dy: this.state.animation.y
-        }
-      ])
-    })
+          dy: this.state.animation.y,
+        },
+      ]),
+    });
   }
-  
+
   render() {
     const { height } = Dimensions.get("window");
 
-    const inputRange = [0, (height / 2) - 50.01, (height / 2) - 50, height];
-      // const inputRange =[0, (height / 2) - 50.01, (height / 2), height];
+    const inputRange = [0, height / 2 - 50.01, height / 2 - 50, height];
+    // const inputRange =[0, (height / 2) - 50.01, (height / 2), height];
     const backgroundColorInterpolate = this.state.animation.y.interpolate({
       inputRange,
-      outputRange: ['rgb(99,71,255)', 'rgb(99,71,255)', 'rgb(255,0,0)', 'rgb(255,0,0)']
+      outputRange: ["rgb(99,71,255)", "rgb(99,71,255)", "rgb(255,0,0)", "rgb(255,0,0)"],
     });
 
     const flipInterpolate = this.state.animation.y.interpolate({
       inputRange,
-      outputRange: [1, 1, -1, -1]
-    })
+      outputRange: [1, 1, -1, -1],
+    });
 
     const animatedStyles = {
       backgroundColor: backgroundColorInterpolate,
-      transform: [
-        ...this.state.animation.getTranslateTransform(),
-        { scale: flipInterpolate }
-      ],
-    }
-
+      transform: [...this.state.animation.getTranslateTransform(), { scale: flipInterpolate }],
+    };
 
     return (
       <View style={styles.container}>
@@ -55,12 +59,14 @@ export default class animations extends Component {
         <View style={[styles.center, styles.container]}>
           <Text>Bad</Text>
         </View>
-        <Animated.View {...this._panResponder.panHandlers} style={[styles.box, styles.center, animatedStyles]}>
+        <Animated.View
+          {...this._panResponder.panHandlers}
+          style={[styles.box, styles.center, animatedStyles]}
+        >
           <Text>Box</Text>
         </Animated.View>
       </View>
     );
-
   }
 }
 
@@ -81,8 +87,8 @@ const styles = StyleSheet.create({
   },
   center: {
     alignItems: "center",
-    justifyContent: "center"
-  }
+    justifyContent: "center",
+  },
 });
 
 AppRegistry.registerComponent("animations", () => animations);
