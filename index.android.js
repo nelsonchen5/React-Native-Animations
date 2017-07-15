@@ -142,9 +142,6 @@ const styles = StyleSheet.create({
   other: {
     backgroundColor: "#FFF",
   },
-  otherText: {
-    color: "#555",
-  },
   payText: {
     color: "#FFF",
   },
