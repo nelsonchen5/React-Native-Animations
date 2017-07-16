@@ -135,15 +135,10 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#FFF",
-    // fontSize: 28
   },
   editor: {
     borderWidth: 1,
     borderColor: "rgba(0,0, 0, .1)",
-    // shadowColor: "#000",
-    // shadowOpacity: .05,
-    // shadowRadius: 3,
-    // shadowOffset: { x: 0, y: 3 }
   },
   bar: {
     backgroundColor: "#2979FF",
