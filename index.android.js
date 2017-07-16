@@ -8,6 +8,7 @@ import {
   TextInput,
   Dimensions,
   TouchableWithoutFeedback,
+  KeyboardAvoidingView,
 } from "react-native";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -19,7 +20,6 @@ export default class animations extends Component {
   };
 
   toggleTransform = () => {
-
     const toValue = this._open ? 0 : 1;
 
     Animated.timing(this.state.animation, {
@@ -32,21 +32,19 @@ export default class animations extends Component {
         open: this._open,
       });
     });
-
-    
-  }
+  };
 
   render() {
     const { width, height } = Dimensions.get("window");
 
     const widthInterpolate = this.state.animation.interpolate({
-      inputRange: [0, .5],
+      inputRange: [0, 0.5],
       outputRange: [100, width - 40],
-      extrapolate: "clamp"
+      extrapolate: "clamp",
     });
 
     const opacityToolbarInterpolate = this.state.animation.interpolate({
-      inputRange: [0, .5],
+      inputRange: [0, 0.5],
       outputRange: [0, 1],
       extrapolate: "clamp",
     });
@@ -56,9 +54,9 @@ export default class animations extends Component {
     };
 
     const editorHeightInputInterpolate = this.state.animation.interpolate({
-      inputRange: [.7, 1],
+      inputRange: [0.7, 1],
       outputRange: [0, 150],
-      extrapolate: "clamp"
+      extrapolate: "clamp",
     });
 
     const editorStyle = {
@@ -67,14 +65,14 @@ export default class animations extends Component {
     };
 
     const opacityButtonInterpolate = this.state.animation.interpolate({
-      inputRange: [0, .5],
+      inputRange: [0, 0.5],
       outputRange: [1, 0],
-      extrapolate: "clamp"
+      extrapolate: "clamp",
     });
 
     const buttonStyles = {
-      opacity: opacityButtonInterpolate
-    }
+      opacity: opacityButtonInterpolate,
+    };
 
     return (
       <View style={styles.container}>
@@ -93,9 +91,9 @@ export default class animations extends Component {
               </View>
             </Animated.View>
 
-            <Animated.View 
+            <Animated.View
               style={[StyleSheet.absoluteFill, styles.center, buttonStyles]}
-              pointerEvents={this.state.open ? "none" : "auto" }
+              pointerEvents={this.state.open ? "none" : "auto"}
             >
               <TouchableWithoutFeedback onPress={this.toggleTransform}>
                 <View>
@@ -103,14 +101,13 @@ export default class animations extends Component {
                 </View>
               </TouchableWithoutFeedback>
             </Animated.View>
-
           </Animated.View>
           <Animated.View style={[styles.lowerView, editorStyle]}>
             <TextInput
               placeholder="Start writing..."
               style={[StyleSheet.absoluteFill, styles.input]}
               multiline
-              ref={(input) => this._input = input}
+              ref={input => (this._input = input)}
             />
           </Animated.View>
         </Animated.View>
@@ -175,7 +172,8 @@ const styles = StyleSheet.create({
   close: {
     color: "#2979FF",
     marginTop: 10,
-  }
+    marginBottom: 20
+  },
 });
 
 AppRegistry.registerComponent("animations", () => animations);
