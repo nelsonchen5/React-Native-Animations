@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 0,
     top: 0,
+    borderRadius: 2,
   },
   opacityBackground: {
     // backgroundColor: "rgba(255,255,255,.5)",
