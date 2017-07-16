@@ -25,7 +25,7 @@ export default class animations extends Component {
 
   handleToggle = () => {
     const toValue = this._open ? 0 : 1;
-    
+
     Animated.timing(this.state.animation, {
       toValue,
       duration: 450,
@@ -38,17 +38,16 @@ export default class animations extends Component {
     const toValue = this._inputOpen ? 0 : 1;
     Animated.timing(this.state.buttonAnimation, {
       toValue,
-      duration: 350
+      duration: 350,
     }).start(() => {
       // If opening focus
       // If closing blur
       this._inputOpen ? this._input.getNode().blur() : this._input.getNode().focus();
-
     });
 
     this._inputOpen = !this._inputOpen;
-    this.setState({ inputOpen: this._inputOpen })
-  }
+    this.setState({ inputOpen: this._inputOpen });
+  };
 
   render() {
     const scaleYInterpolate = this.state.animation.interpolate({
@@ -80,7 +79,6 @@ export default class animations extends Component {
       backgroundColor: this.state.color,
     };
 
-
     const moveInterpolate = this.state.buttonAnimation.interpolate({
       inputRange: [0, 1],
       outputRange: [-150, 0],
@@ -89,95 +87,91 @@ export default class animations extends Component {
     const buttonStyle = {
       transform: [
         {
-          translateX: moveInterpolate
+          translateX: moveInterpolate,
         },
         {
-          scale: this.state.buttonAnimation
-        }
-      ]
-    }
+          scale: this.state.buttonAnimation,
+        },
+      ],
+    };
 
     const colorRowInterpolate = this.state.buttonAnimation.interpolate({
-      inputRange: [0, .01],
+      inputRange: [0, 0.01],
       outputRange: [0, 1],
-      extrapolate: "clamp"
+      extrapolate: "clamp",
     });
 
     const colorRowStyles = {
-      opacity: colorRowInterpolate
-    }
+      opacity: colorRowInterpolate,
+    };
 
     const inputOpacityInterpolate = this.state.buttonAnimation.interpolate({
-      inputRange: [0, .8, 1],
-      outputRange: [0, 0, 1]
+      inputRange: [0, 0.8, 1],
+      outputRange: [0, 0, 1],
     });
 
     const inputStyle = {
-      opacity: inputOpacityInterpolate
-    }
+      opacity: inputOpacityInterpolate,
+    };
 
     const iconTranslate = this.state.buttonAnimation.interpolate({
       inputRange: [0, 1],
-      outputRange: [0, -20]
+      outputRange: [0, -20],
     });
 
     const opacityIconInterpolate = this.state.buttonAnimation.interpolate({
-      inputRange: [0, .2],
+      inputRange: [0, 0.2],
       outputRange: [1, 0],
       extrapolate: "clamp",
-    })
+    });
 
     const iconStyle = {
       opacity: opacityIconInterpolate,
       transform: [
         {
-          translateX: iconTranslate
-        }
-      ]
-    }
+          translateX: iconTranslate,
+        },
+      ],
+    };
 
     return (
       <View style={styles.container}>
         <Animated.View style={[rowStyle, styles.rowWrap]}>
-          
-            <TouchableWithoutFeedback onPress={this.toggleInput}>
-              <Animated.View style={[styles.colorBall, colorStyle]} />
-            </TouchableWithoutFeedback>
-            
-            <View style={styles.row}>
-              <TouchableOpacity>
-                <AnimatedIcon name="bold" size={30} color="#555" style={iconStyle}/>
-              </TouchableOpacity>
-              <TouchableOpacity >
-                <AnimatedIcon name="italic" size={30} color="#555" style={iconStyle} />
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <AnimatedIcon name="align-center" size={30} color="#555" style={iconStyle}/>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <AnimatedIcon name="link" size={30} color="#555" style={iconStyle}/>
-              </TouchableOpacity>
+          <TouchableWithoutFeedback onPress={this.toggleInput}>
+            <Animated.View style={[styles.colorBall, colorStyle]} />
+          </TouchableWithoutFeedback>
 
-              <Animated.View 
-                style={[StyleSheet.absoluteFill, styles.colorRowWrap, colorRowStyles]}
-                pointerEvents={this.state.inputOpen ? "auto" : "none" }
-              >
-                <AnimatedTextInput 
-                  value={this.state.color} 
-                  style={[styles.input, inputStyle]}
-                  onChangeText={(color) => this.setState({ color })}
-                  ref={(input) => this._input = input}
-                />
-                <TouchableWithoutFeedback onPress={this.toggleInput}>
-                  <Animated.View style={[styles.okayButton, buttonStyle]}>
-                    <Text style={styles.okayText}>OK</Text>
-                  </Animated.View>
-                </TouchableWithoutFeedback>
-              </Animated.View>
-            </View>
+          <View style={styles.row}>
+            <TouchableOpacity>
+              <AnimatedIcon name="bold" size={30} color="#555" style={iconStyle} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <AnimatedIcon name="italic" size={30} color="#555" style={iconStyle} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <AnimatedIcon name="align-center" size={30} color="#555" style={iconStyle} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <AnimatedIcon name="link" size={30} color="#555" style={iconStyle} />
+            </TouchableOpacity>
 
-            
-
+            <Animated.View
+              style={[StyleSheet.absoluteFill, styles.colorRowWrap, colorRowStyles]}
+              pointerEvents={this.state.inputOpen ? "auto" : "none"}
+            >
+              <AnimatedTextInput
+                value={this.state.color}
+                style={[styles.input, inputStyle]}
+                onChangeText={color => this.setState({ color })}
+                ref={input => (this._input = input)}
+              />
+              <TouchableWithoutFeedback onPress={this.toggleInput}>
+                <Animated.View style={[styles.okayButton, buttonStyle]}>
+                  <Text style={styles.okayText}>OK</Text>
+                </Animated.View>
+              </TouchableWithoutFeedback>
+            </Animated.View>
+          </View>
         </Animated.View>
 
         <TouchableOpacity onPress={this.handleToggle} style={styles.button}>
@@ -206,7 +200,7 @@ const styles = StyleSheet.create({
     shadowOffset: { x: 2, y: 2 },
     shadowRadius: 3,
     paddingVertical: 5,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
   },
   row: {
     flex: 1,
@@ -222,7 +216,7 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
   input: {
-    flex: 5, 
+    flex: 5,
   },
   okayButton: {
     borderRadius: 15,
