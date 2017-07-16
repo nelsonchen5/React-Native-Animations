@@ -39,14 +39,13 @@ export default class animations extends Component {
     Animated.timing(this.state.buttonAnimation, {
       toValue,
       duration: 350,
-    }).start(() => {
-      // If opening focus
-      // If closing blur
-      this._inputOpen ? this._input.getNode().blur() : this._input.getNode().focus();
-    });
+    }).start();
 
     this._inputOpen = !this._inputOpen;
-    this.setState({ inputOpen: this._inputOpen });
+    this.setState({ inputOpen: this._inputOpen }, () => {
+      !this.state.inputOpen ? this._input.getNode().blur() : this._input.getNode().focus();
+    });
+
   };
 
   render() {
@@ -239,3 +238,5 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent("animations", () => animations);
+
+console.disableYellowBox = true;
