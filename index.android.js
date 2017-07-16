@@ -49,10 +49,10 @@ export default class animations extends Component {
           this._viewImage.measure((tX, tY, tWidth, tHeight, tPageX, tPageY) => {
             Animated.parallel([
               Animated.spring(this.state.position.x, {
-                toValue: 0,
+                toValue: tPageX,
               }),
               Animated.spring(this.state.position.y, {
-                toValue: 0,
+                toValue: tPageY,
               }),
               Animated.spring(this.state.size.x, {
                 toValue: tWidth,
@@ -174,11 +174,7 @@ export default class animations extends Component {
               purus orci viverra metus, eget finibus neque turpis sed turpis.
             </Text>
           </Animated.View>
-          <TouchableWithoutFeedback onPress={this.handleClose}>
-            <Animated.View style={[styles.close, animatedClose]}>
-              <Text style={styles.closeText}>X</Text>
-            </Animated.View>
-          </TouchableWithoutFeedback>
+          
         </View>
         <Animated.Image
           key={this.state.activeImage}
@@ -186,6 +182,11 @@ export default class animations extends Component {
           resizeMode="cover"
           style={[styles.viewImage, activeImageStyle]}
         />
+        <TouchableWithoutFeedback onPress={this.handleClose}>
+            <Animated.View style={[styles.close, animatedClose]}>
+              <Text style={styles.closeText}>X</Text>
+            </Animated.View>
+          </TouchableWithoutFeedback>
       </View>
     );
   }

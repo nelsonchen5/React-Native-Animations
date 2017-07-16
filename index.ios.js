@@ -49,10 +49,10 @@ export default class animations extends Component {
           this._viewImage.measure((tX, tY, tWidth, tHeight, tPageX, tPageY) => {
             Animated.parallel([
               Animated.spring(this.state.position.x, {
-                toValue: 0,
+                toValue: tPageX,
               }),
               Animated.spring(this.state.position.y, {
-                toValue: 0,
+                toValue: tPageY,
               }),
               Animated.spring(this.state.size.x, {
                 toValue: tWidth,
