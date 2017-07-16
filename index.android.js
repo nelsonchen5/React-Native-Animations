@@ -26,9 +26,7 @@ export default class animations extends Component {
 
   handleOpenImage = index => {
     this._gridImages[index].getNode().measure((x, y, width, height, pageX, pageY) => {
-
-      this._x = pageX,
-      this._y = pageY;
+      (this._x = pageX), (this._y = pageY);
       this._width = width;
       this._height = height;
 
@@ -49,7 +47,6 @@ export default class animations extends Component {
         },
         () => {
           this._viewImage.measure((tX, tY, tWidth, tHeight, tPageX, tPageY) => {
-
             Animated.parallel([
               Animated.spring(this.state.position.x, {
                 toValue: 0,
@@ -65,7 +62,7 @@ export default class animations extends Component {
               }),
               Animated.spring(this.state.animation, {
                 toValue: 1,
-              })
+              }),
             ]).start();
           });
         }
@@ -94,13 +91,12 @@ export default class animations extends Component {
       Animated.timing(this.state.animation, {
         toValue: 0,
         duration: 250,
-      })
+      }),
     ]).start(() => {
       this.setState({
         activeImage: null,
       });
     });
-
   };
 
   render() {
@@ -119,8 +115,8 @@ export default class animations extends Component {
     };
 
     const animatedClose = {
-      opacity: this.state.animation
-    }
+      opacity: this.state.animation,
+    };
 
     const activeImageStyle = {
       width: this.state.size.x,
@@ -130,15 +126,14 @@ export default class animations extends Component {
     };
 
     const activeIndexStyle = {
-      opacity: this.state.activeImage ? 0 : 1
-    }
+      opacity: this.state.activeImage ? 0 : 1,
+    };
 
     return (
       <View style={styles.container}>
         <ScrollView>
           <View style={styles.grid}>
             {images.map((src, index) => {
-
               const style = index === this.state.activeIndex ? activeIndexStyle : undefined;
 
               return (
@@ -158,15 +153,11 @@ export default class animations extends Component {
           style={StyleSheet.absoluteFill}
           pointerEvents={this.state.activeImage ? "auto" : "none"}
         >
-          
-          <View style={styles.topContent} ref={image => (this._viewImage = image)}>
-            <Animated.Image
-              key={this.state.activeImage}
-              source={this.state.activeImage}
-              resizeMode="cover"
-              style={[styles.viewImage, activeImageStyle]}
-            />
-          </View>
+          <View
+            style={styles.topContent}
+            ref={image => (this._viewImage = image)}
+            onLayout={() => {}}
+          />
           <Animated.View
             style={[styles.content, animtedContentStyles]}
             ref={content => (this._content = content)}
@@ -189,6 +180,12 @@ export default class animations extends Component {
             </Animated.View>
           </TouchableWithoutFeedback>
         </View>
+        <Animated.Image
+          key={this.state.activeImage}
+          source={this.state.activeImage}
+          resizeMode="cover"
+          style={[styles.viewImage, activeImageStyle]}
+        />
       </View>
     );
   }
@@ -231,8 +228,8 @@ const styles = StyleSheet.create({
   closeText: {
     backgroundColor: "transparent",
     fontSize: 28,
-    color: "#FFF"
-  }
+    color: "#FFF",
+  },
 });
 
 AppRegistry.registerComponent("animations", () => animations);
