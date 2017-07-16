@@ -54,9 +54,6 @@ export default class animations extends Component {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
-      onPanResponderGrant: () => {
-        this.state.animation.extractOffset();
-      },
       onPanResponderMove: Animated.event([
         null,
         {
@@ -65,13 +62,12 @@ export default class animations extends Component {
         },
       ]),
       onPanResponderRelease: (e, { dx, vx, vy }) => {
-        this.state.animation.flattenOffset();
         let velocity;
 
         if (vx >= 0) {
           velocity = clamp(vx, 3, 5);
         } else if (vx < 0) {
-          velocity = clamp(vx * -1, 3, 5) * -1;
+          velocity = clamp(Math.abs(vx), 3, 5) * -1;
         }
 
         if (Math.abs(dx) > SWIPE_THRESHOLD) {
@@ -94,9 +90,9 @@ export default class animations extends Component {
         toValue: 0,
         duration: 300,
       }),
-      Animated.timing(this.state.next, {
+      Animated.spring(this.state.next, {
         toValue: 1,
-        duration: 300,
+        friction: 4
       }),
     ]).start(() => {
       this.setState(
@@ -123,10 +119,6 @@ export default class animations extends Component {
       toValue: SWIPE_THRESHOLD,
     }).start(this.transitionNext);
   };
-
-  componentWillUnmount() {
-    this.state.animation.removeAllListeners();
-  }
 
   render() {
     const { animation } = this.state;
