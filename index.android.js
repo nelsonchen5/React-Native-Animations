@@ -5,7 +5,6 @@ import {
   Text,
   View,
   Animated,
-  ActivityIndicator,
   TouchableWithoutFeedback,
 } from "react-native";
 
