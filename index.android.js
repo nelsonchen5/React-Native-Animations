@@ -26,9 +26,8 @@ export default class animations extends Component {
   handleToggle = () => {
     const toValue = this._open ? 0 : 1;
 
-    Animated.timing(this.state.animation, {
+    Animated.spring(this.state.animation, {
       toValue,
-      duration: 450,
     }).start();
 
     this._open = !this._open;
@@ -190,7 +189,6 @@ const styles = StyleSheet.create({
   rowWrap: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
     minWidth: "50%",
     backgroundColor: "#FFF",
     borderRadius: 20,
