@@ -61,12 +61,9 @@ If you've made modifications and it will not let you check out another demo just
 [scrollNative](https://gitlab.com/codedaily/reactnativeanimations/tree/scrollNative)
 
 ### Gestures and Animations
-<<<<<<< HEAD
 [tinder](https://gitlab.com/codedaily/reactnativeanimations/tree/tinder)
 [staggerHeads](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerHeads)
-=======
 [decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
->>>>>>> 99bbe98... Rename branch
 
 ### Understand and Build Custom Animations
 
@@ -84,14 +81,9 @@ If you've made modifications and it will not let you check out another demo just
 
 ### Techniques
 
-<<<<<<< HEAD
 - [.99 cliff](https://gitlab.com/codedaily/reactnativeanimations/tree/99cliff)
 - [Animating Components Away + Interrupted Animations](https://gitlab.com/codedaily/reactnativeanimations/tree/animateHidden)
 - [Interrupted Animations](https://gitlab.com/codedaily/reactnativeanimations/tree/interrupted)
-=======
-- .99 cliff
-
->>>>>>> 99bbe98... Rename branch
 
 ### Basic Real World 
 
