@@ -16,17 +16,13 @@ export default class animations extends Component {
     animation: new Animated.Value(0),
   };
   toggleOpen = () => {
-    if (this._open) {
-      Animated.timing(this.state.animation, {
-        toValue: 0,
-        duration: 300,
-      }).start();
-    } else {
-      Animated.timing(this.state.animation, {
-        toValue: 1,
-        duration: 300,
-      }).start();
-    }
+    const toValue = this._open ? 0 : 1;
+
+    Animated.timing(this.state.animation, {
+      toValue,
+      duration: 300,
+    }).start();
+    
     this._open = !this._open;
   };
   render() {
