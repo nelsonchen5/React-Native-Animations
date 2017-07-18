@@ -123,7 +123,7 @@ export default class animations extends Component {
           <View style={{ width, height, backgroundColor: "#F89E20" }}>
             <View style={styles.screenHeader}>
               <Animated.Image
-                source={Images.Screen1Image1}
+                source={Images.Image1}
                 style={{
                   width: PixelRatio.getPixelSizeForLayoutSize(75),
                   height: PixelRatio.getPixelSizeForLayoutSize(63),
@@ -132,7 +132,7 @@ export default class animations extends Component {
               />
 
               <Animated.Image
-                source={Images.Screen1Image2}
+                source={Images.Image2}
                 style={[
                   {
                     width: PixelRatio.getPixelSizeForLayoutSize(46),
@@ -146,7 +146,7 @@ export default class animations extends Component {
                 resizeMode="contain"
               />
               <Animated.Image
-                source={Images.Screen1Image3}
+                source={Images.Image3}
                 style={{
                   width: PixelRatio.getPixelSizeForLayoutSize(23),
                   height: PixelRatio.getPixelSizeForLayoutSize(17),
@@ -165,7 +165,7 @@ export default class animations extends Component {
           <View style={{ width, height, backgroundColor: "#F89E20" }}>
             <View style={styles.screenHeader}>
               <Animated.Image
-                source={Images.Screen1Image1}
+                source={Images.Image1}
                 style={{
                   width: PixelRatio.getPixelSizeForLayoutSize(75),
                   height: PixelRatio.getPixelSizeForLayoutSize(63),
@@ -174,7 +174,7 @@ export default class animations extends Component {
               />
 
               <Animated.Image
-                source={Images.Screen1Image2}
+                source={Images.Image2}
                 style={[
                   {
                     width: PixelRatio.getPixelSizeForLayoutSize(46),
@@ -188,7 +188,7 @@ export default class animations extends Component {
                 resizeMode="contain"
               />
               <Animated.Image
-                source={Images.Screen1Image3}
+                source={Images.Image3}
                 style={{
                   width: PixelRatio.getPixelSizeForLayoutSize(23),
                   height: PixelRatio.getPixelSizeForLayoutSize(17),
@@ -206,7 +206,7 @@ export default class animations extends Component {
           <View style={{ width, height, backgroundColor: "#F89E20" }}>
             <View style={styles.screenHeader}>
               <Animated.Image
-                source={Images.Screen1Image1}
+                source={Images.Image1}
                 style={[
                   {
                     width: PixelRatio.getPixelSizeForLayoutSize(75),
@@ -218,7 +218,7 @@ export default class animations extends Component {
               />
 
               <Animated.Image
-                source={Images.Screen1Image2}
+                source={Images.Image2}
                 style={[
                   {
                     width: PixelRatio.getPixelSizeForLayoutSize(46),
@@ -232,7 +232,7 @@ export default class animations extends Component {
                 resizeMode="contain"
               />
               <Animated.Image
-                source={Images.Screen1Image3}
+                source={Images.Image3}
                 style={{
                   width: PixelRatio.getPixelSizeForLayoutSize(23),
                   height: PixelRatio.getPixelSizeForLayoutSize(17),
