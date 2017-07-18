@@ -67,7 +67,7 @@ const getScreen3Styles = (animation, width) => {
 
   const image2Rotate = animation.interpolate({
     inputRange,
-    outputRange: ["180deg", "0deg", "180deg"],
+    outputRange: ["-180deg", "0deg", "180deg"],
     extrapolate: "clamp",
   });
 
