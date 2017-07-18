@@ -31,7 +31,7 @@ const getScreen1Styles = (animation, width) => {
 };
 
 const getScreen2Styles = (animation, width) => {
-  const inputRange = [-width, width, width * 2];
+  const inputRange = [0, width, width * 2];
 
   const image2TranslateY = animation.interpolate({
     inputRange,
@@ -57,7 +57,7 @@ const getScreen2Styles = (animation, width) => {
 };
 
 const getScreen3Styles = (animation, width) => {
-  const inputRange = [-width * 2, width * 2, width * 3];
+  const inputRange = [width, width * 2, width * 3];
 
   const image1Scale = animation.interpolate({
     inputRange,
@@ -99,9 +99,9 @@ export default class animations extends Component {
   render() {
     const { width, height } = Dimensions.get("window");
 
-    const screen1Interpolations = getScreen1Styles(this.state.animation, width);
-    const screen2Interpolations = getScreen2Styles(this.state.animation, width);
-    const screen3Interpolations = getScreen3Styles(this.state.animation, width);
+    const screen1Styles = getScreen1Styles(this.state.animation, width);
+    const screen2Styles = getScreen2Styles(this.state.animation, width);
+    const screen3Styles = getScreen3Styles(this.state.animation, width);
 
     return (
       <View style={styles.container}>
@@ -141,7 +141,7 @@ export default class animations extends Component {
                     top: 200,
                     left: 60,
                   },
-                  screen1Interpolations.image2,
+                  screen1Styles.image2,
                 ]}
                 resizeMode="contain"
               />
@@ -183,7 +183,7 @@ export default class animations extends Component {
                     top: 200,
                     left: 60,
                   },
-                  screen2Interpolations.image2,
+                  screen2Styles.image2,
                 ]}
                 resizeMode="contain"
               />
@@ -212,7 +212,7 @@ export default class animations extends Component {
                     width: PixelRatio.getPixelSizeForLayoutSize(75),
                     height: PixelRatio.getPixelSizeForLayoutSize(63),
                   },
-                  screen3Interpolations.image1,
+                  screen3Styles.image1,
                 ]}
                 resizeMode="contain"
               />
@@ -227,7 +227,7 @@ export default class animations extends Component {
                     top: 200,
                     left: 60,
                   },
-                  screen3Interpolations.image2,
+                  screen3Styles.image2,
                 ]}
                 resizeMode="contain"
               />
