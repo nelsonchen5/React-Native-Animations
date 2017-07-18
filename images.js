@@ -15,11 +15,6 @@ import Screen3Image3 from "./imgs/s3/3.png";
 import Screen3Image4 from "./imgs/s3/4.png";
 import Screen3Image5 from "./imgs/s3/5.png";
 
-import Screen4Image1 from "./imgs/s4/1.png";
-import Screen4Image2 from "./imgs/s4/2.png";
-import Screen4Image3 from "./imgs/s4/3.png";
-import Screen4Image4 from "./imgs/s4/4.png";
-
 export {
   Screen1Image1,
   Screen1Image2,
@@ -34,8 +29,4 @@ export {
   Screen3Image3,
   Screen3Image4,
   Screen3Image5,
-  Screen4Image1,
-  Screen4Image2,
-  Screen4Image3,
-  Screen4Image4,
 }
