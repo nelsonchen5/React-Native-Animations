@@ -45,8 +45,8 @@ export default class animations extends Component {
     });
 
     const orderInterpolate = this.state.animation.interpolate({
-      inputRange: [0, 0.5, 1],
-      outputRange: [0, -70, -140],
+      inputRange: [0, 1],
+      outputRange: [0, -140],
     });
 
     const reloadStyle = {
@@ -65,8 +65,8 @@ export default class animations extends Component {
       ],
     };
     const labelPositionInterpolate = this.state.animation.interpolate({
-      inputRange: [0, 0.8, 1],
-      outputRange: [-30, -60, -90],
+      inputRange: [0, 1],
+      outputRange: [-30, -90],
     });
     const opacityInterpolate = this.state.animation.interpolate({
       inputRange: [0, 0.8, 1],
