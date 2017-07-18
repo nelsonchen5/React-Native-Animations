@@ -9,8 +9,6 @@ import {
   PanResponder,
 } from "react-native";
 
-import clamp from "clamp";
-
 export default class animations extends Component {
   state = {
     animation: new Animated.ValueXY(0),
@@ -29,7 +27,6 @@ export default class animations extends Component {
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: (e, gestureState) => {
-        // this.state.animation.extractOffset();
         this.state.animation.setOffset({ x: this._x, y: this._y });
         this.state.animation.setValue({ x: 0, y: 0 });
       },
