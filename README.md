@@ -24,12 +24,10 @@ If you've made modifications and it will not let you check out another demo just
 [timingAbsolute](https://gitlab.com/codedaily/reactnativeanimations/tree/timingAbsolute)
 [timingColor](https://gitlab.com/codedaily/reactnativeanimations/tree/timingColor)
 [timingRotation](https://gitlab.com/codedaily/reactnativeanimations/tree/timingRotation)
-[timingWidth](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWidth)
+[timingWidthHeightPercentage](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWidthHeightPercentage)
 
-### Additional Animated Timing
+### Easing
 [timingWithEasing](https://gitlab.com/codedaily/reactnativeanimations/tree/timingWithEasing)
-
-### Animated.Value/ValueXY
 
 ### Animated Functions
 [timing](https://gitlab.com/codedaily/reactnativeanimations/tree/timing)
@@ -41,13 +39,11 @@ If you've made modifications and it will not let you check out another demo just
 [delay](https://gitlab.com/codedaily/reactnativeanimations/tree/delay)
 [decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
 [event](https://gitlab.com/codedaily/reactnativeanimations/tree/event)
-// react-native-tab-view
 [add](https://gitlab.com/codedaily/reactnativeanimations/tree/add)
 [divide](https://gitlab.com/codedaily/reactnativeanimations/tree/divide)
 [modulo](https://gitlab.com/codedaily/reactnativeanimations/tree/modulo)
 [multiply](https://gitlab.com/codedaily/reactnativeanimations/tree/multiply)
-//header
-[diffClamp](https://gitlab.com/codedaily/reactnativeanimations/tree/diffClamp)
+[createAnimatedComponent](https://gitlab.com/codedaily/reactnativeanimations/tree/createAnimatedComponent)
 
 ### Combining Animations
 [parallel](https://gitlab.com/codedaily/reactnativeanimations/tree/parallel)
@@ -55,12 +51,20 @@ If you've made modifications and it will not let you check out another demo just
 [stagger](https://gitlab.com/codedaily/reactnativeanimations/tree/stagger)
 [delay](https://gitlab.com/codedaily/reactnativeanimations/tree/delay)
 
+## Interpolation
+[interpolateNumber](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateNumber)
+[interpolateColors](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateColors)
+[interpolateRotation](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateRotation)
+[interpolateExtrapolate](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateExtrapolate)
+
+
 ### Using Native Driver
 [timingNative](https://gitlab.com/codedaily/reactnativeanimations/tree/timingNative)
 [springNative](https://gitlab.com/codedaily/reactnativeanimations/tree/timingSpring)
 [scrollNative](https://gitlab.com/codedaily/reactnativeanimations/tree/scrollNative)
 
 ### Gestures and Animations
+[decay](https://gitlab.com/codedaily/reactnativeanimations/tree/decay)
 [tinder](https://gitlab.com/codedaily/reactnativeanimations/tree/tinder)
 [staggerHeads](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerHeads)
 
@@ -81,12 +85,16 @@ If you've made modifications and it will not let you check out another demo just
 ### Techniques
 
 - [.99 cliff](https://gitlab.com/codedaily/reactnativeanimations/tree/99cliff)
-- [Animating Components Away + Interrupted Animations](https://gitlab.com/codedaily/reactnativeanimations/tree/animateHidden)
+- [Animating Components Away](https://gitlab.com/codedaily/reactnativeanimations/tree/animateHidden)
 - [Interrupted Animations](https://gitlab.com/codedaily/reactnativeanimations/tree/interrupted)
 
 ### Basic Real World 
 
 ## DISECT ANIMATION VIDEOS
+
+- [Animate to the 4 corners](https://gitlab.com/codedaily/reactnativeanimations/tree/4corners)
+- [Tinder Swiper](https://gitlab.com/codedaily/reactnativeanimations/tree/tinder)
+- [Staggered Head Drag](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerHeads)
 
 - [Animated Button with Progress Bar](https://gitlab.com/codedaily/reactnativeanimations/tree/buttonWithProgress) - https://demo.tutorialzine.com/2013/10/buttons-built-in-progress-meters/
 
@@ -100,4 +108,4 @@ If you've made modifications and it will not let you check out another demo just
 - [Shared Element Transition](https://gitlab.com/codedaily/reactnativeanimations/tree/photoGrid)
 - [Fade in backdrop, expanding image with sliding information](https://gitlab.com/codedaily/reactnativeanimations/tree/fadeDelayAndSlide)
 - [Evolving Write Button - https://uimovement.com/ui/2649/writer/](https://gitlab.com/codedaily/reactnativeanimations/tree/writer)
-- [Animated Color Picker Bar - https://uimovement.com/ui/304/text-editor-animation/](https://gitlab.com/codedaily/reactnativeanimations/tree/colorPicker) Color Picker Bar](https://uimovement.com/ui/304/text-editor-animation/)
+- [Animated Color Picker Bar - https://uimovement.com/ui/304/text-editor-animation/](https://gitlab.com/codedaily/reactnativeanimations/tree/colorPicker)
