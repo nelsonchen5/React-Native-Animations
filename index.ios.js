@@ -48,7 +48,7 @@ export default class animations extends Component {
   };
 
   render() {
-    const scaleYInterpolate = this.state.animation.interpolate({
+    const scaleXInterpolate = this.state.animation.interpolate({
       inputRange: [0, 0.5, 1],
       outputRange: [0, 0, 1],
     });
@@ -65,7 +65,7 @@ export default class animations extends Component {
           translateY: translateYInterpolate,
         },
         {
-          scaleX: scaleYInterpolate,
+          scaleX: scaleXInterpolate,
         },
         {
           scaleY: this.state.animation,
@@ -213,11 +213,12 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
   input: {
-    flex: 5,
+    flex: 1,
   },
   okayButton: {
-    borderRadius: 15,
-    flex: 1,
+    borderRadius: 20,
+    height: "100%",
+    width: 40,
     backgroundColor: "#309EEB",
     alignItems: "center",
     justifyContent: "center",
