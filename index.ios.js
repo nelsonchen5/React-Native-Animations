@@ -1,11 +1,19 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Animated, TouchableWithoutFeedback, Easing } from "react-native";
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Animated,
+  TouchableWithoutFeedback,
+  Easing,
+} from "react-native";
 
 export default class animations extends Component {
   state = {
     animation: new Animated.Value(0),
   };
-  
+
   startAnimation = () => {
     Animated.timing(this.state.animation, {
       toValue: 500,
@@ -15,14 +23,12 @@ export default class animations extends Component {
       // easing: Easing.elastic(3)
       // easing: Easing.bezier(.06,1,.86,.23)
     }).start();
-  }
-  
+  };
+
   render() {
     const animatedStyles = {
-      transform: [
-        { translateY: this.state.animation },
-      ]
-    }
+      transform: [{ translateY: this.state.animation }],
+    };
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.startAnimation}>
@@ -30,7 +36,6 @@ export default class animations extends Component {
         </TouchableWithoutFeedback>
       </View>
     );
-
   }
 }
 
@@ -43,7 +48,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     backgroundColor: "tomato",
-  }
+  },
 });
 
 AppRegistry.registerComponent("animations", () => animations);
