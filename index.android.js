@@ -19,7 +19,7 @@ export default class animations extends Component {
     animation: new Animated.Value(0),
   };
 
-  handlePress = () => {
+  componentWillMount() {
     const pathInterpolate = interpolatePath(startPath, endPath);
 
     this.state.animation.addListener(({ value }) => {
@@ -28,7 +28,9 @@ export default class animations extends Component {
         d: path,
       });
     });
-
+  }
+    
+  handlePress = () => {
     Animated.sequence([
       Animated.timing(this.state.animation, {
         toValue: 1,
@@ -40,8 +42,8 @@ export default class animations extends Component {
         duration: 500
       })
     ]).start();
-    
   };
+
   render() {
     return (
       <View style={styles.container}>
