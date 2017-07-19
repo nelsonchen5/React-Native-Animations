@@ -33,7 +33,7 @@ export default class animations extends Component {
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.handlePress}>
           <Animated.View style={[styles.box, boxStyle]}>
-            <Text style={styles.text}>Hello Parallel</Text>
+            <Text style={styles.text}>Hello Stagger</Text>
           </Animated.View>
         </TouchableWithoutFeedback>
       </View>
