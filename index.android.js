@@ -1,10 +1,18 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Animated, ScrollView, TouchableOpacity } from "react-native";
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Animated,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 
 export default class animations extends Component {
   state = {
     animation: new Animated.Value(0),
-  }
+  };
   _enabled = true;
 
   handleToggle = () => {
@@ -19,45 +27,42 @@ export default class animations extends Component {
 
     this._scroll.setNativeProps({
       scrollEnabled: this._enabled,
-      style
+      style,
     });
-  }
+  };
 
   render() {
-
     const bgInterpolate = this.state.animation.interpolate({
       inputRange: [0, 3000],
-      outputRange: ["rgb(255,99,71)", "rgb(99,71,255)"]
+      outputRange: ["rgb(255,99,71)", "rgb(99,71,255)"],
     });
     const scrollStyle = {
-      backgroundColor: bgInterpolate
-    }
+      backgroundColor: bgInterpolate,
+    };
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress={this.handleToggle}>
           <Text>Toggle</Text>
         </TouchableOpacity>
 
-        <ScrollView 
+        <ScrollView
           style={styles.scroll}
-          ref={(scroll) => this._scroll = scroll}
+          ref={scroll => (this._scroll = scroll)}
           scrollEventThrottle={16}
           onScroll={Animated.event([
             {
               nativeEvent: {
                 contentOffset: {
                   y: this.state.animation,
-                }
-              }
-            }
+                },
+              },
+            },
           ])}
         >
           <Animated.View style={[styles.fakeContent, scrollStyle]} />
         </ScrollView>
-
       </View>
     );
-
   }
 }
 
@@ -79,7 +84,7 @@ const styles = StyleSheet.create({
   fakeContent: {
     height: 3000,
     backgroundColor: "tomato",
-  }
+  },
 });
 
 AppRegistry.registerComponent("animations", () => animations);
