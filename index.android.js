@@ -7,7 +7,8 @@ export default class animations extends Component {
   state = {
     animation: new Animated.Value(0)
   };
-  handlePress = () => {
+  
+  componentWillMount() {
     const positionInterpolate = interpolateNumber(0, 200);
     const colorInterpolate = interpolateRgb("rgb(255,99,71)", "rgb(99,71,255)");;
 
@@ -26,12 +27,13 @@ export default class animations extends Component {
       ];
       this._view.setNativeProps({ style });
     });
-
+  }
+  
+  handlePress = () => {
     Animated.timing(this.state.animation, {
       toValue: 1,
       duration: 500,
     }).start();
-
   }
   
   render() {
