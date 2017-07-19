@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Animated, TouchableWithoutFeedback } from "react-native";
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Animated,
+  TouchableWithoutFeedback,
+} from "react-native";
 
 export default class animations extends Component {
   state = {
@@ -9,20 +16,19 @@ export default class animations extends Component {
     Animated.timing(this.state.animation, {
       // toValue: 3,
       toValue: 2,
-      duration: 1500
+      duration: 1500,
     }).start(() => {
       Animated.timing(this.state.animation, {
         // toValue: 0,
         toValue: 1,
-        duration: 300
+        duration: 300,
       }).start();
 
       // this.state.animation.setValue(5);
     });
-  }
-  
-  render() {
+  };
 
+  render() {
     //extend: Default
     //clamp: Whatever the end values we've defined are the values they will stay at, never go beyond
     //identity: Takes on the value of the Animated.Value that you're passing in and ignores inputRange/outputRange
@@ -34,14 +40,12 @@ export default class animations extends Component {
       // extrapolate: "clamp",
       // extrapolateLeft: "clamp",
       // extrapolateRight: "clamp"
-    })
+    });
 
     const animatedStyles = {
-      transform: [
-        { scale: scaleInterpolate }
-      ]
-    }
-    
+      transform: [{ scale: scaleInterpolate }],
+    };
+
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.startAnimation}>
@@ -49,7 +53,6 @@ export default class animations extends Component {
         </TouchableWithoutFeedback>
       </View>
     );
-
   }
 }
 
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     backgroundColor: "tomato",
-  }
+  },
 });
 
 AppRegistry.registerComponent("animations", () => animations);
