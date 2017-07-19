@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Animated, TouchableWithoutFeedback } from "react-native";
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Animated,
+  TouchableWithoutFeedback,
+} from "react-native";
 
 export default class animations extends Component {
   state = {
@@ -8,22 +15,21 @@ export default class animations extends Component {
   startAnimation = () => {
     Animated.timing(this.state.animation, {
       toValue: 3,
-      duration: 1500
+      duration: 1500,
     }).start(() => {
       this.state.animation.setValue(0);
     });
-  }
-  
-  render() {
+  };
 
+  render() {
     const colorInterpolate = this.state.animation.interpolate({
       inputRange: [0, 1, 2],
-      outputRange: ["rgb(255,99,71)", "rgb(99,71,255)", "rgb(71,255,99)"]
+      outputRange: ["rgb(255,99,71)", "rgb(99,71,255)", "rgb(71,255,99)"],
     });
-    
+
     const animatedStyles = {
-      backgroundColor: colorInterpolate
-    }
+      backgroundColor: colorInterpolate,
+    };
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.startAnimation}>
@@ -31,7 +37,6 @@ export default class animations extends Component {
         </TouchableWithoutFeedback>
       </View>
     );
-
   }
 }
 
@@ -44,7 +49,7 @@ const styles = StyleSheet.create({
   box: {
     width: 150,
     height: 150,
-  }
+  },
 });
 
 AppRegistry.registerComponent("animations", () => animations);
