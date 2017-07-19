@@ -1,9 +1,16 @@
 import React, { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View, Animated, TouchableWithoutFeedback } from "react-native";
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Animated,
+  TouchableWithoutFeedback,
+} from "react-native";
 
 export default class animations extends Component {
   state = {
-    animation: new Animated.Value(1)
+    animation: new Animated.Value(1),
   };
 
   handlePress = () => {
@@ -19,14 +26,12 @@ export default class animations extends Component {
         useNativeDriver: true,
       }).start();
     });
-  }
+  };
 
   render() {
     const animatedStyle = {
-      transform: [
-        { scale: this.state.animation}
-      ]
-    }
+      transform: [{ scale: this.state.animation }],
+    };
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback onPress={this.handlePress}>
@@ -34,7 +39,6 @@ export default class animations extends Component {
         </TouchableWithoutFeedback>
       </View>
     );
-
   }
 }
 
@@ -48,7 +52,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     backgroundColor: "tomato",
-  }
+  },
 });
 
 AppRegistry.registerComponent("animations", () => animations);
