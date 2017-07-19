@@ -11,30 +11,27 @@ import {
 export default class animations extends Component {
   state = {
     animation: new Animated.Value(0),
-    position: new Animated.Value(0),
   };
   startAnimation = () => {
     Animated.parallel([
       Animated.timing(this.state.animation, {
-        toValue: 100,
-        duration: 1500,
-      }),
-      Animated.timing(this.state.position, {
-        toValue: 24,
-        duration: 1500,
+        toValue: 12,
+        duration: 3500,
       }),
     ]).start();
   };
 
   render() {
     const randomValue = 3;
-    const newAnimation = Animated.multiply(
-      this.state.position,
-      Animated.modulo(this.state.animation, randomValue)
-    );
+    const newAnimation = Animated.modulo(this.state.animation, randomValue);
+
+    const interpolated = newAnimation.interpolate({
+      inputRange: [0, 3],
+      outputRange: ["0deg", "270deg"]
+    })
 
     const animatedStyles = {
-      transform: [{ translateY: newAnimation }],
+      transform: [{ rotate: interpolated }],
     };
     return (
       <View style={styles.container}>
