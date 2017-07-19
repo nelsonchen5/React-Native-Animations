@@ -25,7 +25,8 @@ export default class animations extends Component {
     animation: new Animated.Value(0),
   };
 
-  handlePress = () => {
+  
+  componentWillMount() {
     const pathInterpolate = Tween(startPath, endPath);
     const p = new SVGPath();
 
@@ -37,7 +38,9 @@ export default class animations extends Component {
         d: p.toSVG()
       })
     });
-
+  }
+  
+  handlePress = () => {
     Animated.sequence([
       Animated.timing(this.state.animation, {
         toValue: 1,
