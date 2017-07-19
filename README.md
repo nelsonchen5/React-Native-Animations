@@ -76,7 +76,7 @@ If you've made modifications and it will not let you check out another demo just
 
 - [Using d3-interpolate with Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/d3Interpolate)
 
-- [Animating SVG paths w/ d3-interpolate and Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/svgPathsAndAnimated)
+- [Animating SVG paths w/ d3-interpolate-path and Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/svgPathsAndAnimated)
 
 - [Animating SVG paths w/ Art and Animated](https://gitlab.com/codedaily/reactnativeanimations/tree/svgPathsWithArt)
 
