@@ -7,53 +7,58 @@ import {
   Animated,
   TouchableWithoutFeedback,
   PanResponder,
+  Dimensions
 } from "react-native";
 
 export default class animations extends Component {
   state = {
     animation: new Animated.ValueXY(0),
+    value: 0,
   };
 
   componentWillMount() {
-    this._x = 0;
-    this._y = 0;
 
-    this.state.animation.addListener(value => {
-      this._x = value.x;
-      this._y = value.y;
+    this.state.animation.y.addListener(({ value }) => {
+      this.setState({
+        value
+      })
     });
 
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: (e, gestureState) => {
-        this.state.animation.setOffset({ x: this._x, y: this._y });
-        this.state.animation.setValue({ x: 0, y: 0 });
+        this.state.animation.extractOffset();
       },
       onPanResponderMove: Animated.event([
         null,
         { dx: this.state.animation.x, dy: this.state.animation.y },
       ]),
-      onPanResponderRelease: (e, { vx, vy }) => {
-        Animated.decay(this.state.animation, {
-          velocity: { x: vx, y: vy },
-          deceleration: 0.997,
-        }).start();
-      },
     });
   }
 
   render() {
-    const animatedStyle = {
-      transform: this.state.animation.getTranslateTransform(),
-    };
+    const { height } = Dimensions.get("window");
 
+    var scaleAndFlipOnReverse = this.state.animation.y.interpolate({
+      inputRange: [0, height / 3],
+      outputRange: [0.1, 1],
+      extrapolateLeft: "extend",
+      extrapolateRight: "clamp",
+    });
+
+    const animatedStyle = { 
+      transform: [
+        { scale: scaleAndFlipOnReverse },
+      ] 
+    };
     return (
-      <View style={styles.container}>
-        <Animated.View
+      <View style={styles.container} {...this._panResponder.panHandlers}>
+        <Animated.View 
           style={[styles.box, animatedStyle]}
-          {...this._panResponder.panHandlers}
-        />
+        >
+          <Text>{Math.round(this.state.value)}/{Math.round(height/3)}</Text>
+        </Animated.View>
       </View>
     );
   }
@@ -66,8 +71,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   box: {
-    width: 50,
-    height: 50,
+    width: 75,
+    height: 75,
     backgroundColor: "tomato",
   },
 });
