@@ -56,7 +56,7 @@ If you've made modifications and it will not let you check out another demo just
 [interpolateColors](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateColors)
 [interpolateRotation](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateRotation)
 [interpolateExtrapolate](https://gitlab.com/codedaily/reactnativeanimations/tree/interpolateExtrapolate)
-
+[mixedExtrapolate](https://gitlab.com/codedaily/reactnativeanimations/tree/mixedExtrapolate)
 
 ### Using Native Driver
 [timingNative](https://gitlab.com/codedaily/reactnativeanimations/tree/timingNative)
