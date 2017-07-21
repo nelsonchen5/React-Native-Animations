@@ -29,9 +29,15 @@ export default class animations extends Component {
       outputRange: [1, .5]
     });
 
+    const translateXInterpolate = animatedInterpolate.interpolate({
+      inputRange: [0, 30, 50, 80, 100, 150, 299, 300],
+      outputRange: [0, -30, -50, 80, -100, 300, 0, -100]
+    })
+
     const animatedStyles = {
       transform: [
-        { translateY: animatedInterpolate }
+        { translateY: animatedInterpolate },
+        { translateX: translateXInterpolate}
       ],
       opacity: interpolatedInterpolate,
     }
