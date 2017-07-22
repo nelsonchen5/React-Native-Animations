@@ -14,7 +14,7 @@ export default class animations extends Component {
   };
   startAnimation = () => {
     Animated.timing(this.state.animation, {
-      toValue: 3,
+      toValue: 2,
       duration: 1500,
     }).start(() => {
       this.state.animation.setValue(0);
@@ -22,20 +22,12 @@ export default class animations extends Component {
   };
 
   render() {
-    const colorInterpolate = this.state.animation.interpolate({
-      inputRange: [0, 1, 2],
-      outputRange: ["rgb(255,99,71)", "rgb(99,71,255)", "rgb(71,255,99)"],
-    });
-
-    const animatedStyles = {
-      backgroundColor: colorInterpolate,
-    };
     return (
-      <View style={styles.container}>
+      <Animated.View style={[styles.container]}>
         <TouchableWithoutFeedback onPress={this.startAnimation}>
-          <Animated.View style={[styles.box, animatedStyles]} />
+          <Animated.View style={[styles.box]} />
         </TouchableWithoutFeedback>
-      </View>
+      </Animated.View>
     );
   }
 }
