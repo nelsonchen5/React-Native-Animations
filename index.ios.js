@@ -7,7 +7,6 @@ import {
   Image,
   Animated,
   PanResponder,
-  Easing,
 } from "react-native";
 
 import Vjeux from "./vjeux.jpg";
