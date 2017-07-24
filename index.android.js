@@ -99,15 +99,13 @@ export default class animations extends Component {
 
     return (
       <View style={styles.container}>
-        <View style={[styles.overlay, StyleSheet.absoluteFill]} pointerEvents="box-none">
-          <View style={styles.questionContainer}>
-            <Animated.Text style={[styles.questionText, mainQuestionStyle]}>
-              {question}
-            </Animated.Text>
-            <Animated.Text style={[styles.questionText, nextQuestionStyle]}>
-              {nextQuestion}
-            </Animated.Text>
-          </View>
+        <View style={[styles.overlay, StyleSheet.absoluteFill]} >
+          <Animated.Text style={[styles.questionText, mainQuestionStyle]}>
+            {question}
+          </Animated.Text>
+          <Animated.Text style={[styles.questionText, nextQuestionStyle]}>
+            {nextQuestion}
+          </Animated.Text>
         </View>
 
         <View style={styles.progress}>
@@ -154,18 +152,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  questionContainer: {
-    width: "100%",
-    height: 100,
-  },
   questionText: {
     fontSize: 30,
     color: "#FFF",
     textAlign: "center",
     position: "absolute",
-    left: 0,
-    right: 0,
-    top: 0,
   },
   close: {
     position: "absolute",
