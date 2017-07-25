@@ -20,7 +20,7 @@ export default class animations extends Component {
 
     Animated.timing(this.state.animation, {
       toValue,
-      duration: 300,
+      duration: 200,
     }).start();
     
     this._open = !this._open;
@@ -52,6 +52,9 @@ export default class animations extends Component {
     const reloadStyle = {
       transform: [
         {
+          scale: this.state.animation
+        },
+        {
           translateY: reloadInterpolate,
         },
       ],
@@ -59,6 +62,9 @@ export default class animations extends Component {
 
     const orderStyle = {
       transform: [
+        {
+          scale: this.state.animation
+        },
         {
           translateY: orderInterpolate,
         },
