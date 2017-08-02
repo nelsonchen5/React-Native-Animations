@@ -91,8 +91,6 @@ If you've made modifications and it will not let you check out another demo just
 
 ### Basic Real World 
 
-## DISECT ANIMATION VIDEOS
-
 - [Animate to the 4 corners](https://gitlab.com/codedaily/reactnativeanimations/tree/4corners)
 - [Kitten Card Swiper](https://gitlab.com/codedaily/reactnativeanimations/tree/kittenCards)
 - [Staggered Head Drag](https://gitlab.com/codedaily/reactnativeanimations/tree/staggerHeads)
