@@ -7,14 +7,19 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-  }
-})
+  },
+});
 
 class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate("Profile")}>
+        <TouchableOpacity
+          onPress={() =>
+            this.props.navigation.navigate("Profile", {
+              duration: 3000,
+            })}
+        >
           <Text>Home</Text>
         </TouchableOpacity>
       </View>

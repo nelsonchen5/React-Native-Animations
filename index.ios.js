@@ -14,8 +14,13 @@ import Profile from "./profile";
 
 class CustomNavigationView extends Component {
   _configureTransition = (transitionProps, prevTransitionProps) => {
+    const scene = transitionProps.scene;
+    const route = scene && scene.route;
+    const params = route && route.params;
+    const duration = params && params.duration || 1000;
+
     return {
-      duration: 1000,
+      duration,
       easing: Easing.back(5),
     };
   };
@@ -34,6 +39,7 @@ class CustomNavigationView extends Component {
     const { routes } = navigation.state;
     const { position } = transitionProps;
     const { index } = scene;
+
     const animatedValue = position.interpolate({
       inputRange: [index - 1, index, index + 1],
       outputRange: [0, 1, 0],
