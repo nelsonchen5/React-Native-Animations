@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Animated,
-  PanResponder,
-} from "react-native";
+import { AppRegistry, StyleSheet, Text, View, Image, Animated, PanResponder } from "react-native";
 
 import Vjeux from "./vjeux.jpg";
 
@@ -66,22 +58,23 @@ export default class animations extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.heads.slice(0).reverse().map((item, index, items) => {
-          const pan = index === items.length - 1 ? this._panResponder.panHandlers : {};
+        {this.state.heads
+          .slice(0)
+          .reverse()
+          .map((item, index, items) => {
+            const pan = index === items.length - 1 ? this._panResponder.panHandlers : {};
 
-          return (
-            <Animated.Image
-              {...pan}
-              key={index}
-              source={item.image}
-              style={[styles.head, { transform: item.animation.getTranslateTransform() }]}
-            >
-              <Text>
-                {item.text}
-              </Text>
-            </Animated.Image>
-          );
-        })}
+            return (
+              <Animated.View
+                {...pan}
+                key={index}
+                style={[styles.wrap, { transform: item.animation.getTranslateTransform() }]}
+              >
+                <Image source={item.image} style={styles.head} />
+                <Text>{item.text}</Text>
+              </Animated.View>
+            );
+          })}
       </View>
     );
   }
@@ -93,13 +86,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  wrap: {
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 80,
+    height: 80,
+  },
   head: {
     width: 80,
     height: 80,
     borderRadius: 40,
     position: "absolute",
-    alignItems: "center",
-    justifyContent: "center",
+    left: 0,
+    top: 0,
+    bottom: 0,
+    right: 0,
   },
 });
 
